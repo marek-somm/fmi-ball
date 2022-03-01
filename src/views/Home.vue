@@ -1,18 +1,114 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="home-container">
+		<div class="inner">
+			<div class="header">
+				<h1 class="title">FMI-Ball 2022</h1>
+				<hr />
+				<p class="subtitle">
+					Tanzball der Fakultät für Mathematik und Informatik
+				</p>
+			</div>
+			<div @click="gotoAbout" class="arrow animate__animated animate__bounce animate__slow animate__infinite">
+				<i class="fa-solid fa-chevron-down fa-2x"></i>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { useRouter } from 'vue-router';
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
-}
+	setup() {
+		const router = useRouter()
+
+		function gotoAbout() {
+			router.push({
+				name: 'About'
+			})
+		}
+
+		return {
+			gotoAbout
+		};
+	},
+};
 </script>
+
+<style lang="scss" scoped>
+#home-container {
+	//background-color: $white;
+	color: $white;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	.inner {
+		display: inline-block;
+		vertical-align: middle;
+		box-sizing: inherit;
+
+		.header {
+			.title {
+				font-size: 4rem;
+				text-shadow: 1px 1px 6px black;
+			}
+
+			hr {
+				height: 4px;
+				border: 1px #c0c0c059 solid;
+				border-right: none;
+				border-left: none;
+				box-shadow: 1px 1px 3px black;
+				position: relative;
+
+				&::before, &::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: -0.5rem;
+					background-color: #c0c0c059;
+					height: calc(1rem + 4px);
+					width: 1px;
+					box-shadow: 2px 2px 3px black;
+				}
+
+				&::before {
+					left: -1px;
+				}
+
+				&::after {
+					right: -1px;
+				}
+			}
+
+			.subtitle {
+				font-size: 1.25rem;
+				color: $white-second;
+				font-weight: 300;
+				text-shadow: 2px 2px 3px black;
+			}
+		}
+
+		.arrow {
+			display: inline-block;
+			padding: 1rem;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	.content {
+		font-size: 1.2rem;
+		background: $white-second;
+		padding: 1rem 5rem 3rem 5rem;
+		text-align: left;
+	}
+}
+</style>
