@@ -17,7 +17,6 @@
     "debounce": "^1.2.1",
     "vue": "^3.2.11",
     "vue-router": "^4.0.0-0",
-    "vue3-carousel": "^0.1.36",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {

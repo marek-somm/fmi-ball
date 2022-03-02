@@ -52,15 +52,7 @@ export default {
 
 		onMounted(() => {
 			if (access.access) {
-				window.addEventListener(
-					"keydown",
-					debounce(processKeyDownEvent, 400, true)
-				);
-				window.addEventListener("keyup", processKeyUpEvent);
-				window.addEventListener(
-					"wheel",
-					debounce(processWheelEvent, 400, true)
-				);
+				addListeners();
 			} else {
 				input.value.focus();
 			}
@@ -110,15 +102,20 @@ export default {
 			access.access = access.input === access.password;
 
 			if (access.access) {
-				window.addEventListener(
-					"keydown",
-					debounce(processKeyEvent, 300, true)
-				);
-				window.addEventListener(
-					"wheel",
-					debounce(processWheelEvent, 300, true)
-				);
+				addListeners()
 			}
+		}
+
+		function addListeners() {
+			window.addEventListener(
+				"keydown",
+				debounce(processKeyDownEvent, 400, true)
+			);
+			window.addEventListener("keyup", processKeyUpEvent);
+			window.addEventListener(
+				"wheel",
+				debounce(processWheelEvent, 400, true)
+			);
 		}
 
 		return {
