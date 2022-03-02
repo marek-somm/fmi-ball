@@ -3,6 +3,7 @@ import Home from '../views/Home.vue';
 import About from '../views/About.vue';
 import Tickets from '../views/Tickets.vue';
 import Sponsor from '../views/Sponsor.vue';
+import Greetings from '../views/Greetings.vue';
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
       prev: 'Tickets',
       next: 'Sponsor',
     },
+  },
+  {
+    path: '/greetings',
+    name: 'Greetings',
+    component: Greetings
   }
 ];
 
