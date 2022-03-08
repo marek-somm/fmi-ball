@@ -14,7 +14,7 @@
 				<p>Physkier- und Chemikerball? Das können wir auch!</p>
 				<p>
 					Der <b>FMI-Ball</b> geht in die erste Runde. Bla Bla, dies und
-					das... Lorem Impsum. Text text. Protokoll vom 08.02.2022: Siebte
+					das... Lorem Impsum. Protokoll vom 08.02.2022: Siebte
 					Sitzung.<br />
 					Antonia fragt Helen, ob es Neuigkeiten von FiFi bezüglich
 					unterschreiben gibt. Sie können das nicht übernehmen. Micha

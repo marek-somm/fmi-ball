@@ -30,7 +30,7 @@ export default {
 			!props.solid ? colors.white : colors.black
 		);
 		const menuBorderColor = computed(() =>
-			!props.solid ? "#c0c0c059" : "#74747459"
+			!props.solid ? "#e4e4e459" : "#74747459"
 		);
 		const menuBackgroundColor = computed(() =>
 			!props.solid ? "transparent" : "#f2f2f2"
@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 $menu-transition-time: 0.7s;
 $menuColor: $white;
-$menuBorderColor: #c0c0c059;
+$menuBorderColor: #e4e4e459;
 $menuBackgroundColor: transparent;
 $menuBackgroundShadow: transparent;
 
