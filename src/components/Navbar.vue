@@ -2,16 +2,16 @@
 	<div id="nav">
 		<ul class="menu">
 			<li class="menu-item">
-				<router-link to="#home">Home</router-link>
+				<a href="#home">Home</a>
 			</li>
 			<li class="menu-item">
-				<router-link :to="{ path: '#about' }">Infos</router-link>
+				<a href="#about">Infos</a>
 			</li>
 			<li class="menu-item">
-				<router-link :to="{ name: 'Tickets' }">Karten</router-link>
+				<a href="#tickets">Karten</a>
 			</li>
 			<li class="menu-item">
-				<router-link :to="{ name: 'Sponsor' }">Sponsoren</router-link>
+				<a href="#sponsor">Sponsoren</a>
 			</li>
 		</ul>
 	</div>

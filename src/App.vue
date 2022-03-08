@@ -12,7 +12,7 @@
 		/>
 	</div>
 	<div ref="wrapper" class="wrapper" v-if="access.access">
-		<Navbar :solid="data.navbarSolid"/>
+		<Navbar :solid="data.navbarSolid" />
 		<Home />
 		<About />
 		<Tickets />
@@ -43,7 +43,7 @@ export default {
 
 		const data = reactive({
 			shift: false,
-			navbarSolid: false
+			navbarSolid: false,
 		});
 		const router = useRouter();
 		const route = useRoute();
@@ -57,13 +57,26 @@ export default {
 				input.value.focus();
 			}
 
-			wrapper.value.onscroll = function(e) {
-				if(wrapper.value.scrollTop > 0) {
-					data.navbarSolid = true
+			wrapper.value.onscroll = function (e) {
+				if (wrapper.value.scrollTop > 0) {
+					data.navbarSolid = true;
 				} else {
 					data.navbarSolid = false;
 				}
 			};
+
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					console.log(e)
+					e.preventDefault();
+
+					document
+						.querySelector(this.getAttribute("href"))
+						.scrollIntoView({
+							behavior: "smooth",
+						});
+				});
+			});
 		});
 
 		function processKeyDownEvent(event) {
@@ -131,7 +144,7 @@ export default {
 			input,
 			access,
 			accessSubmit,
-			wrapper
+			wrapper,
 		};
 	},
 };

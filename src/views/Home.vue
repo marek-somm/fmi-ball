@@ -8,9 +8,9 @@
 					Tanzball der Fakultät für Mathematik und Informatik
 				</p>
 			</div>
-			<div @click="gotoAbout" class="arrow animate__animated animate__bounce animate__slow animate__infinite">
+			<a href="#about" class="arrow animate__animated animate__bounce animate__slow animate__infinite">
 				<i class="fa-solid fa-chevron-down fa-2x"></i>
-			</div>
+			</a>
 		</div>
 	</div>
 </template>
@@ -19,17 +19,7 @@
 import { useRouter } from 'vue-router';
 export default {
 	setup() {
-		const router = useRouter()
-
-		function gotoAbout() {
-			router.push({
-				name: 'About'
-			})
-		}
-
-		return {
-			gotoAbout
-		};
+		return {};
 	},
 };
 </script>
@@ -99,6 +89,8 @@ export default {
 		.arrow {
 			display: inline-block;
 			padding: 1rem;
+			text-decoration: none;
+			color: $white;
 
 			&:hover {
 				cursor: pointer;

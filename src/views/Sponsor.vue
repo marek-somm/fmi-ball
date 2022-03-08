@@ -1,48 +1,82 @@
 <template>
 	<div id="sponsor">
-		<div class="header">
-			<h2 class="title">Unsere Sponsoren</h2>
-			<p class="subtitle">
-				Wir bedanken uns herzlich bei allen Sponsoren für die Unterstüzung
-				des FMI-Balls
-			</p>
-		</div>
-		<div class="content">
-			<div class="navigator left" v-show="">
-				<i class="fa-solid fa-chevron-left fa-2x"></i>
+		<div class="inner">
+			<div class="header">
+				<h2 class="title">Unsere Sponsoren</h2>
+				<p class="subtitle">
+					Wir bedanken uns herzlich bei allen Sponsoren für die
+					Unterstüzung des FMI-Balls
+				</p>
 			</div>
-			<div class="navigator right" v-show="">
-				<i class="fa-solid fa-chevron-right fa-2x"></i>
-			</div>
-			<div class="sponsor-wrapper">
-				<article
-					class="sponsor"
-					v-for="(sponsor, index) in sponsors"
-					:key="index"
-					:style="{ transform: 'translateX(calc(0rem))' }"
-				>
-					<div class="image-wrapper">
-						<a :href="sponsor.url" :target="sponsor.tab ? '_blank' : ''" draggable="false">
-							<img
-								class="image"
-								:src="'/assets/sponsors/' + sponsor.image"
-								draggable="false"
-							/>
-						</a>
-					</div>
-					<div class="footer">
-						<h3 class="title">
+			<div class="content">
+				<div class="navigator left" v-show="">
+					<i class="fa-solid fa-chevron-left fa-2x"></i>
+				</div>
+				<div class="navigator right" v-show="">
+					<i class="fa-solid fa-chevron-right fa-2x"></i>
+				</div>
+				<div class="sponsor-wrapper">
+					<article
+						class="sponsor"
+						v-for="(sponsor, index) in sponsors"
+						:key="index"
+					>
+						<div class="image-wrapper">
 							<a
 								:href="sponsor.url"
 								:target="sponsor.tab ? '_blank' : ''"
-								>{{ sponsor.name }}</a
+								draggable="false"
 							>
-						</h3>
-						<p class="text">
-							{{ sponsor.text }}
-						</p>
-					</div>
-				</article>
+								<img
+									class="image"
+									:src="'/assets/sponsors/' + sponsor.image"
+									draggable="false"
+								/>
+							</a>
+						</div>
+						<div class="footer">
+							<h3 class="title">
+								<a
+									:href="sponsor.url"
+									:target="sponsor.tab ? '_blank' : ''"
+									>{{ sponsor.name }}</a
+								>
+							</h3>
+							<p class="text">
+								{{ sponsor.text }}
+							</p>
+						</div>
+					</article>
+					<article class="sponsor">
+						<div class="image-wrapper">
+							<transition mode="out-in" name="fade">
+								<img
+									class="image"
+									:src="'/assets/sponsors/' + egg.image"
+									draggable="false"
+									@click="showEgg"
+									:key="egg.image"
+								/>
+							</transition>
+						</div>
+						<div class="footer">
+							<h3 class="title">
+								<a @click="showEgg">
+									<transition mode="out-in" name="fade">
+										<p style="margin: 0" :key="egg.name">
+											{{ egg.name }}
+										</p>
+									</transition>
+								</a>
+							</h3>
+							<transition mode="out-in" name="fade">
+								<p class="text" :key="egg.text">
+									{{ egg.text }}
+								</p>
+							</transition>
+						</div>
+					</article>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -75,22 +109,32 @@ export default {
 				tab: true,
 				text: "Ein anonymer Beitrag einer anonymen Gruppe in anonymer Höhe",
 			},
-			mm: {
-				image: "sponsor01.png",
-				name: "Max Mustermann",
-				url: "greetings",
-				tab: true,
-				text: "",
-			},
+		});
+
+		const egg = reactive({
+			image: "sponsor01.png",
+			name: "Max Mustermann",
+			eggname: "Marek Sommerfeld",
+			url: "greetings",
+			tab: true,
+			text: "",
 		});
 
 		const data = reactive({
 			offset: 100,
 		});
 
+		function showEgg() {
+			egg.name = egg.eggname;
+			egg.text = "Schöne Grüße vom Entwickler 😜";
+			egg.image = "egg.png"
+		}
+
 		return {
 			data,
 			sponsors,
+			egg,
+			showEgg,
 		};
 	},
 };
@@ -101,112 +145,145 @@ export default {
 	height: 100vh;
 	//background-color: $white;
 
-	.header {
-		font-size: 2rem;
-		padding: 3rem 0 4.5rem 0;
-		color: $white;
-
-		.subtitle {
-			font-size: 1.5rem;
-			color: $white-second;
-			font-weight: 300;
-			margin: 1.5rem 2rem;
-		}
+	&::before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		box-sizing: border-box;
 	}
 
-	.content {
+	.inner {
 		display: inline-block;
-		box-sizing: border-box;
-		background: $white-second;
-		padding: 1rem 6rem 3rem 6rem;
-		overflow: hidden;
+		vertical-align: middle;
+		box-sizing: inherit;
+		width: 100%;
 
-		width: 100vw;
+		.header {
+			font-size: 2rem;
+			padding: 3rem 0 4.5rem 0;
+			color: $white;
 
-		transform: translateX(0);
-
-		.navigator {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			position: absolute;
-			background-color: #5b5b5b5b;
-			height: calc(100% - 4rem);
-			width: 3rem;
-			z-index: 1;
-
-			&.left {
-				left: 5.5rem;
-			}
-
-			&.right {
-				right: 5.5rem;
+			.subtitle {
+				font-size: 1.5rem;
+				color: $white-second;
+				font-weight: 300;
+				margin: 1.5rem 2rem;
 			}
 		}
 
-		.sponsor-wrapper {
-			display: flex;
-			overflow: auto;
+		.content {
+			display: inline-block;
+			box-sizing: border-box;
+			background: $white-second;
+			padding: 1rem 6rem 3rem 6rem;
+			overflow: hidden;
 
-			.sponsor {
-				max-width: 22rem;
-				min-width: 22rem;
-				height: 32rem;
-				background-color: $white;
-				margin: 0 1rem;
-				padding: 1.5rem;
+			width: 100vw;
 
-				.image-wrapper {
-					display: flex;
+			transform: translateX(0);
 
-					width: 22rem;
-					height: 16rem;
-					overflow: hidden;
-					//background-color: #e6ebeb;
-					background-color: $white;
+			.navigator {
+				display: flex;
+				align-items: center;
+				justify-content: center;
 
-					.image {
-						max-width: 100%;
-						max-height: 100%;
-						margin: auto;
-						text-align: center;
-						flex-grow: 0;
-					}
+				position: absolute;
+				background-color: #5b5b5b5b;
+				height: calc(100% - 4rem);
+				width: 3rem;
+				z-index: 1;
+
+				&.left {
+					left: 5.5rem;
 				}
 
-				.footer {
-					display: block;
-					height: 12rem;
+				&.right {
+					right: 5.5rem;
+				}
+			}
 
-					text-align: center;
-					padding: 2rem;
-					padding-bottom: 0;
+			.sponsor-wrapper {
+				display: flex;
+				overflow: auto;
 
-					color: $black-second;
+				.sponsor {
+					max-width: 22rem;
+					min-width: 22rem;
+					height: 32rem;
+					background-color: $white;
+					margin: 0 1rem;
+					padding: 1.5rem;
 
-					.title {
-						font-size: 1.3rem;
+					.image-wrapper {
+						display: flex;
 
-						a {
-							text-decoration: none;
-							color: $black-second;
-							transition: color 0.3s;
+						width: 22rem;
+						height: 16rem;
+						overflow: hidden;
+						//background-color: #e6ebeb;
+						background-color: $white;
+
+						.image {
+							max-width: 100%;
+							max-height: 100%;
+							margin: auto;
+							text-align: center;
+							flex-grow: 0;
 
 							&:hover {
-								color: #0099b4;
+								cursor: pointer;
 							}
 						}
 					}
 
-					.text {
-						font-weight: 300;
-						font-size: 1.1rem;
-						line-height: 1.8rem;
+					.footer {
+						display: block;
+						height: 12rem;
+
+						text-align: center;
+						padding: 2rem;
+						padding-bottom: 0;
+
+						color: $black-second;
+
+						.title {
+							font-size: 1.3rem;
+
+							a {
+								text-decoration: none;
+								color: $black-second;
+								transition: color 0.3s;
+
+								&:hover {
+									cursor: pointer;
+									color: #0099b4;
+								}
+							}
+						}
+
+						.text {
+							font-weight: 300;
+							font-size: 1.1rem;
+							line-height: 1.8rem;
+						}
 					}
 				}
 			}
 		}
+	}
+
+	.fade-enter-active {
+		transition: opacity 100ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	}
+
+	.fade-leave-active {
+		transition: opacity 75ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+
+	.fade-enter-from,
+	.fade-leave-to {
+		opacity: 0;
 	}
 }
 </style>
