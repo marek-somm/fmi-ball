@@ -1,5 +1,5 @@
 <template>
-	<div id="sponsor-container">
+	<div id="sponsor">
 		<div class="header">
 			<h2 class="title">Unsere Sponsoren</h2>
 			<p class="subtitle">
@@ -14,7 +14,7 @@
 			<div class="navigator right" v-show="">
 				<i class="fa-solid fa-chevron-right fa-2x"></i>
 			</div>
-			<div class="sponsor-wrapper" ref="sponsorWrapper">
+			<div class="sponsor-wrapper">
 				<article
 					class="sponsor"
 					v-for="(sponsor, index) in sponsors"
@@ -49,8 +49,7 @@
 </template>
 
 <script>
-import { reactive, ref } from "@vue/reactivity";
-import { onMounted } from "@vue/runtime-core";
+import { reactive } from "@vue/reactivity";
 
 export default {
 	setup() {
@@ -89,25 +88,17 @@ export default {
 			offset: 100,
 		});
 
-		const sponsorWrapper = ref(null);
-
-		onMounted(() => {
-			console.log(sponsorWrapper.value.clientWidth);
-			let calc = 4 * (22 * 16);
-			console.log(calc);
-		});
-
 		return {
 			data,
 			sponsors,
-			sponsorWrapper,
 		};
 	},
 };
 </script>
 
 <style lang="scss" scoped>
-#sponsor-container {
+#sponsor {
+	height: 100vh;
 	//background-color: $white;
 
 	.header {

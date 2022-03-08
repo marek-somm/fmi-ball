@@ -1,5 +1,5 @@
 <template>
-	<div id="home-container">
+	<div id="home">
 		<div class="inner">
 			<div class="header">
 				<h1 class="title">FMI-Ball 2022</h1>
@@ -35,9 +35,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#home-container {
+#home {
+	height: 100vh;
 	//background-color: $white;
 	color: $white;
+	transform: translateY(-4.4rem);
 
 	&::before {
 		content: "";

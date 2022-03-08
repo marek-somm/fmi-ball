@@ -2,10 +2,10 @@
 	<div id="nav">
 		<ul class="menu">
 			<li class="menu-item">
-				<router-link :to="{ name: 'Home' }">Home</router-link>
+				<router-link to="#home">Home</router-link>
 			</li>
 			<li class="menu-item">
-				<router-link :to="{ name: 'About' }">Infos</router-link>
+				<router-link :to="{ path: '#about' }">Infos</router-link>
 			</li>
 			<li class="menu-item">
 				<router-link :to="{ name: 'Tickets' }">Karten</router-link>
@@ -18,25 +18,25 @@
 </template>
 
 <script>
-import { useRoute } from "vue-router";
 import { computed } from "@vue/runtime-core";
 import colors from "@/scss/_colors.scss?vue&type=style&index=0&lang=scss&module=1";
 
 export default {
-	setup() {
-		const route = useRoute();
-
+	props: {
+		solid: Boolean
+	},
+	setup(props) {
 		const menuColor = computed(() =>
-			route.name === "Home" ? colors.white : colors.black
+			!props.solid ? colors.white : colors.black
 		);
 		const menuBorderColor = computed(() =>
-			route.name === "Home" ? "#c0c0c059" : "#74747459"
+			!props.solid ? "#c0c0c059" : "#74747459"
 		);
 		const menuBackgroundColor = computed(() =>
-			route.name === "Home" ? "transparent" : "#f2f2f2"
+			!props.solid ? "transparent" : "#f2f2f2"
 		);
 		const menuBackgroundShadow = computed(() =>
-			route.name === "Home" ? "transparent" : "#00000033"
+			!props.solid ? "transparent" : "#00000033"
 		);
 
 		return {
@@ -51,11 +51,15 @@ export default {
 
 <style lang="scss" scoped>
 $menu-transition-time: 0.7s;
+$menuColor: $white;
+$menuBorderColor: #c0c0c059;
+$menuBackgroundColor: transparent;
+$menuBackgroundShadow: transparent;
 
 #nav {
 	display: block;
 
-	position: absolute;
+	position: sticky;
 	top: 0;
 	left: 0;
 

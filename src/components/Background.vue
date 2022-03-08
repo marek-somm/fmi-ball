@@ -23,14 +23,6 @@ export default {
 	height: 100%;
 	width: 100%;
 
-	background: url("~@/assets/faculty.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-	background-attachment: fixed;
-	filter: blur(3px) brightness(0.8);
-	transform: scale(1.2);
-
 	.img {
 		height: 100%;
 		width: 100%;

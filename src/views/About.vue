@@ -1,5 +1,5 @@
 <template>
-	<div id="about-container">
+	<div id="about">
 		<div class="header">
 			<h2 class="title">Der 1. FMI-Ball steht vor der Tür!</h2>
 			<p class="subtitle">
@@ -57,7 +57,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#about-container {
+#about {
+	height: 100vh;
 	//background-color: $white;
 
 	.header {

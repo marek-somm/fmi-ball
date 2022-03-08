@@ -11,17 +11,12 @@
 			@input="accessSubmit"
 		/>
 	</div>
-	<Navbar v-if="access.access" />
-	<div class="wrapper" v-if="access.access">
-		<Background />
-		<router-view v-slot="{ Component, route }">
-			<transition
-				:enter-active-class="route.meta.enterClass"
-				:leave-active-class="route.meta.leaveClass"
-			>
-				<component :is="Component" class="component" />
-			</transition>
-		</router-view>
+	<div ref="wrapper" class="wrapper" v-if="access.access">
+		<Navbar :solid="data.navbarSolid"/>
+		<Home />
+		<About />
+		<Tickets />
+		<Sponsor />
 	</div>
 </template>
 
@@ -32,30 +27,43 @@ import { onMounted, reactive, ref } from "@vue/runtime-core";
 import { useRoute, useRouter } from "vue-router";
 import { debounce } from "debounce";
 import Background from "./components/Background.vue";
+import Home from "./views/Home.vue";
+import About from "./views/About.vue";
+import Tickets from "./views/Tickets.vue";
+import Sponsor from "./views/Sponsor.vue";
 
 export default {
-	components: { Navbar, Background },
+	components: { Navbar, Background, Home, About, Tickets, Sponsor },
 	setup() {
 		const access = reactive({
-			access: false,
+			access: true,
 			input: null,
 			password: "devball",
 		});
 
 		const data = reactive({
 			shift: false,
+			navbarSolid: false
 		});
 		const router = useRouter();
 		const route = useRoute();
 
 		const input = ref(null);
 
+		const wrapper = ref(null);
+
 		onMounted(() => {
-			if (access.access) {
-				addListeners();
-			} else {
+			if (!access.access) {
 				input.value.focus();
 			}
+
+			wrapper.value.onscroll = function(e) {
+				if(wrapper.value.scrollTop > 0) {
+					data.navbarSolid = true
+				} else {
+					data.navbarSolid = false;
+				}
+			};
 		});
 
 		function processKeyDownEvent(event) {
@@ -102,7 +110,7 @@ export default {
 			access.access = access.input === access.password;
 
 			if (access.access) {
-				addListeners()
+				addListeners();
 			}
 		}
 
@@ -123,6 +131,7 @@ export default {
 			input,
 			access,
 			accessSubmit,
+			wrapper
 		};
 	},
 };
@@ -149,6 +158,11 @@ body {
 	display: flex;
 	flex-direction: column;
 
+	background: url("~@/assets/faculty_blur.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top left, center center;
+
 	h1,
 	h2,
 	h3 {
@@ -159,7 +173,7 @@ body {
 	.wrapper {
 		flex-grow: 1;
 		position: relative;
-		overflow: hidden;
+		overflow-x: hidden;
 		height: 100vh;
 
 		box-sizing: border-box;

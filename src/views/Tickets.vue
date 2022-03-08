@@ -1,5 +1,5 @@
 <template>
-	<div id="tickets-container">
+	<div id="tickets">
 		<div class="header">
 			<h2 class="title">Kartenverkauf und Abholung</h2>
 			<p class="subtitle">Momentan werden noch keine Karten verkauft<br>Der Kartenverkauf öffnet bald</p>
@@ -26,7 +26,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#tickets-container {
+#tickets {
+	height: 100vh;
 	//background-color: $white;
 
 	.header {
