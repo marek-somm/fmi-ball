@@ -67,7 +67,6 @@ export default {
 
 			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 				anchor.addEventListener("click", function (e) {
-					console.log(e)
 					e.preventDefault();
 
 					document
