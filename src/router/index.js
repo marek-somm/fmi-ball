@@ -23,10 +23,8 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      // BEFORE:
-      // return { selector: to.hash }
+      return { el: to.hash }
 
-      return { el: to.hash };
     }
   },
 });

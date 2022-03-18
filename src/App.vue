@@ -173,7 +173,7 @@ body {
 	background: url("~@/assets/faculty_blur.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top left, center center;
+	background-position: center center, center center;
 
 	h1,
 	h2,

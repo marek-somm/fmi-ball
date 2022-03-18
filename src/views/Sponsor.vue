@@ -1,5 +1,5 @@
 <template>
-	<div id="sponsor">
+	<div id="sponsor" class="base">
 		<div class="inner">
 			<div class="header">
 				<h2 class="title">Unsere Sponsoren</h2>
@@ -9,12 +9,6 @@
 				</p>
 			</div>
 			<div class="content">
-				<div class="navigator left" v-show="">
-					<i class="fa-solid fa-chevron-left fa-2x"></i>
-				</div>
-				<div class="navigator right" v-show="">
-					<i class="fa-solid fa-chevron-right fa-2x"></i>
-				</div>
 				<div class="sponsor-wrapper">
 					<article
 						class="sponsor"
@@ -142,66 +136,12 @@ export default {
 
 <style lang="scss" scoped>
 #sponsor {
-	height: 100vh;
-	//background-color: $white;
-
-	&::before {
-		content: "";
-		display: inline-block;
-		vertical-align: middle;
-		height: 100%;
-		box-sizing: border-box;
-	}
-
 	.inner {
-		display: inline-block;
-		vertical-align: middle;
-		box-sizing: inherit;
-		width: 100%;
-
-		.header {
-			font-size: 2rem;
-			padding: 3rem 0 4.5rem 0;
-			color: $white;
-
-			.subtitle {
-				font-size: 1.5rem;
-				color: $white-second;
-				font-weight: 300;
-				margin: 1.5rem 2rem;
-			}
-		}
-
 		.content {
 			display: inline-block;
 			box-sizing: border-box;
-			background: $white-second;
-			padding: 1rem 6rem 3rem 6rem;
 			overflow: hidden;
-
 			width: 100vw;
-
-			transform: translateX(0);
-
-			.navigator {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
-				position: absolute;
-				background-color: #5b5b5b5b;
-				height: calc(100% - 4rem);
-				width: 3rem;
-				z-index: 1;
-
-				&.left {
-					left: 5.5rem;
-				}
-
-				&.right {
-					right: 5.5rem;
-				}
-			}
 
 			.sponsor-wrapper {
 				display: flex;

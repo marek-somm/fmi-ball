@@ -23,20 +23,25 @@ import colors from "@/scss/_colors.scss?vue&type=style&index=0&lang=scss&module=
 
 export default {
 	props: {
-		solid: Boolean
+		solid: Boolean,
 	},
 	setup(props) {
+		console.log(window.innerWidth);
+
+		let tablet = window.innerWidth <= 780 && window.innerWidth > 540;
+		let mobile = window.innerWidth <= 540;
+
 		const menuColor = computed(() =>
-			!props.solid ? colors.white : colors.black
+			!props.solid && !tablet && !mobile ? colors.white : colors.black
 		);
 		const menuBorderColor = computed(() =>
-			!props.solid ? "#e4e4e459" : "#74747459"
+			!props.solid && !tablet && !mobile ? "#e4e4e459" : "#74747459"
 		);
 		const menuBackgroundColor = computed(() =>
-			!props.solid ? "transparent" : "#f2f2f2"
+			!props.solid && !tablet && !mobile ? "transparent" : "#f2f2f2"
 		);
 		const menuBackgroundShadow = computed(() =>
-			!props.solid ? "transparent" : "#00000033"
+			!props.solid && !tablet && !mobile ? "transparent" : "#00000033"
 		);
 
 		return {
@@ -51,10 +56,11 @@ export default {
 
 <style lang="scss" scoped>
 $menu-transition-time: 0.7s;
-$menuColor: $white;
-$menuBorderColor: #e4e4e459;
-$menuBackgroundColor: transparent;
-$menuBackgroundShadow: transparent;
+
+$menuColor: v-bind(menuColor);
+$menuBorderColor: v-bind(menuBorderColor);
+$menuBackgroundColor: v-bind(menuBackgroundColor);
+$menuBackgroundShadow: v-bind(menuBackgroundShadow);
 
 #nav {
 	display: block;
@@ -71,8 +77,8 @@ $menuBackgroundShadow: transparent;
 
 	transition: background $menu-transition-time,
 		box-shadow $menu-transition-time;
-	background-color: v-bind(menuBackgroundColor);
-	box-shadow: 0 0.5rem 2rem v-bind(menuBackgroundShadow);
+	background-color: $menuBackgroundColor;
+	box-shadow: 0 0.5rem 2rem $menuBackgroundShadow;
 
 	.menu {
 		display: inline-block;
@@ -82,37 +88,40 @@ $menuBackgroundShadow: transparent;
 
 		margin: 0;
 		padding: 0 0.5rem;
-		height: 1.25rem;
+		height: max-content;
 
 		transition: border $menu-transition-time;
-		border-left: solid 1px v-bind(menuBorderColor);
-		border-right: solid 1px v-bind(menuBorderColor);
 
-		&::before,
-		&::after {
-			display: block;
-			content: "";
+		@media screen and (min-width: 780px) {
+			border-left: solid 1px $menuBorderColor;
+			border-right: solid 1px $menuBorderColor;
 
-			position: absolute;
-			top: 50%;
-			margin-top: -3px;
+			&::before,
+			&::after {
+				display: block;
+				content: "";
 
-			height: 4px;
-			width: 1000%;
+				position: absolute;
+				top: 50%;
+				margin-top: -3px;
 
-			transition: border $menu-transition-time;
-			border-top: solid 1px v-bind(menuBorderColor);
-			border-bottom: solid 1px v-bind(menuBorderColor);
-		}
+				height: 4px;
+				width: 1000%;
 
-		&::before {
-			margin-left: 1px;
-			left: 100%;
-		}
+				transition: border $menu-transition-time;
+				border-top: solid 1px $menuBorderColor;
+				border-bottom: solid 1px $menuBorderColor;
+			}
 
-		&::after {
-			margin-right: 1px;
-			right: 100%;
+			&::before {
+				margin-left: 1px;
+				left: 100%;
+			}
+
+			&::after {
+				margin-right: 1px;
+				right: 100%;
+			}
 		}
 	}
 
@@ -120,7 +129,12 @@ $menuBackgroundShadow: transparent;
 		display: inline-block;
 
 		margin: 0 0.5rem 0 0.5rem;
-		padding: 0 1rem;
+		padding: 0rem 1rem;
+
+		@media screen and (max-width: 780px) {
+			padding: 0.5rem 1rem;
+			font-size: 1.25rem;
+		}
 
 		//margin: -9px 0.5em 0 0.5em;
 
@@ -130,10 +144,10 @@ $menuBackgroundShadow: transparent;
 			white-space: nowrap;
 
 			transition: color $menu-transition-time;
-			color: v-bind(menuColor);
+			color: $menuColor;
 
 			&.router-link-exact-active {
-				border-bottom: 1px v-bind(menuColor) solid;
+				border-bottom: 1px $menuColor solid;
 			}
 
 			position: relative;
@@ -148,7 +162,7 @@ $menuBackgroundShadow: transparent;
 				width: 100%;
 				height: 1px;
 				transform: scaleX(0);
-				background-color: v-bind(menuColor);
+				background-color: $menuColor;
 
 				transition: transform 0.2s;
 			}

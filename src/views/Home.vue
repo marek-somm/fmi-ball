@@ -1,5 +1,5 @@
 <template>
-	<div id="home">
+	<div id="home" class="base">
 		<div class="inner">
 			<div class="header">
 				<h1 class="title">FMI-Ball 2022</h1>
@@ -26,24 +26,17 @@ export default {
 <style lang="scss" scoped>
 #home {
 	height: 100vh;
-	//background-color: $white;
+	margin: 0;
 	color: $white;
 	transform: translateY(-4.4rem);
 
-	&::before {
-		content: "";
-		display: inline-block;
-		vertical-align: middle;
-		height: 100%;
-		box-sizing: border-box;
-	}
-
 	.inner {
-		display: inline-block;
-		vertical-align: middle;
-		box-sizing: inherit;
+		width: auto;
+		padding: 2rem;
 
 		.header {
+			padding: 0;
+
 			.title {
 				font-size: 4rem;
 				text-shadow: 1px 1px 6px black;

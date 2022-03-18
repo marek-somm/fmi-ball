@@ -1,0 +1,55 @@
+.base {
+	height: max-content;
+	min-height: 100vh;
+	padding: 2rem 0;
+
+	@media screen and (max-width: 780px) {
+		padding: 5rem 0;
+	}
+
+	&::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	.inner {
+		display: inline-block;
+		vertical-align: middle;
+		box-sizing: inherit;
+		width: 100%;
+
+		.header {
+			font-size: 2rem;
+			padding: 3rem 0 4.5rem 0;
+			color: $white;
+
+			.subtitle {
+				font-size: 1.5rem;
+				color: $white-second;
+				font-weight: 300;
+				margin: 1.5rem 2rem;
+			}
+		}
+
+		.content {
+			font-size: 1.2rem;
+			background: $white-second;
+			padding: 1rem 5rem 3rem 5rem;
+			text-align: left;
+
+			@media screen and (max-width: 780px) {
+				padding: 1rem 3rem 3rem 3rem;
+			}
+		}
+	}
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+	.view {
+		width: 400px;
+	}
+}
