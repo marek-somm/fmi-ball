@@ -8,7 +8,7 @@
 					öffnet bald
 				</p>
 
-				<FancyButton text="Jetzt reservieren" @click="" />
+				<FancyButton link="" text="Jetzt reservieren" @click="" />
 			</div>
 			<div class="content">
 				<p>

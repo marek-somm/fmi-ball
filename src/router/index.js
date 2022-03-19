@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import About from '../views/About.vue';
-import Tickets from '../views/Tickets.vue';
-import Sponsor from '../views/Sponsor.vue';
 import Greetings from '../views/Greetings.vue';
 
 const routes = [
@@ -12,9 +9,14 @@ const routes = [
     component: Home,
   },
   {
-    path: '/greetings',
-    name: 'Greetings',
+    path: '/test',
+    name: 'Test',
     component: Greetings
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    redirect: { name: 'Home' }
   }
 ];
 
@@ -23,7 +25,7 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      return { el: to.hash }
+      return { el: to.hash };
 
     }
   },

@@ -7,7 +7,7 @@
 					Reserviere dir jetzt deine Karten für den <b>27.05.2022</b>
 				</p>
 
-				<a href="#tickets"><FancyButton text="Karten reservieren" /></a>
+				<FancyButton href="#tickets" text="Karten reservieren" />
 			</div>
 
 			<div class="content">

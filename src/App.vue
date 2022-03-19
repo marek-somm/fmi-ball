@@ -13,10 +13,11 @@
 	</div>
 	<div ref="wrapper" class="wrapper" v-if="access.access">
 		<Navbar :solid="data.navbarSolid" />
-		<Home />
-		<About />
-		<Tickets />
-		<Sponsor />
+		<Home v-show="route.name == 'Home'"/>
+		<About v-show="route.name == 'Home'"/>
+		<Tickets v-show="route.name == 'Home'"/>
+		<Sponsor v-show="route.name == 'Home'"/>
+		<router-view v-show="route.name != 'Home'"></router-view>
 	</div>
 </template>
 
@@ -140,6 +141,7 @@ export default {
 
 		return {
 			data,
+			route,
 			input,
 			access,
 			accessSubmit,

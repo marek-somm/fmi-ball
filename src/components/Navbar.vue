@@ -1,16 +1,19 @@
 <template>
 	<div id="nav">
-		<ul class="menu">
-			<li class="menu-item">
+		<ul class="menu" >
+			<li class="menu-item" v-show="route.name != 'Home'" >
+				<router-link :to="{ name: 'Home'} ">Home</router-link>
+			</li>
+			<li class="menu-item" v-show="route.name == 'Home'" >
 				<a href="#home">Home</a>
 			</li>
-			<li class="menu-item">
+			<li class="menu-item" v-show="route.name == 'Home'" >
 				<a href="#about">Infos</a>
 			</li>
-			<li class="menu-item">
+			<li class="menu-item" v-show="route.name == 'Home'" >
 				<a href="#tickets">Karten</a>
 			</li>
-			<li class="menu-item">
+			<li class="menu-item" v-show="route.name == 'Home'" >
 				<a href="#sponsor">Sponsoren</a>
 			</li>
 		</ul>
@@ -20,6 +23,7 @@
 <script>
 import { computed } from "@vue/runtime-core";
 import colors from "@/scss/_colors.scss?vue&type=style&index=0&lang=scss&module=1";
+import { useRoute } from 'vue-router';
 
 export default {
 	props: {
@@ -49,6 +53,7 @@ export default {
 			menuBorderColor,
 			menuBackgroundColor,
 			menuBackgroundShadow,
+			route: useRoute()
 		};
 	},
 };
