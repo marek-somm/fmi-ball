@@ -78,7 +78,7 @@ $menuBackgroundShadow: v-bind(menuBackgroundShadow);
 	padding: 1.5em 0 1.5em;
 	overflow: hidden;
 
-	z-index: 1;
+	z-index: 2;
 
 	transition: background $menu-transition-time,
 		box-shadow $menu-transition-time;
