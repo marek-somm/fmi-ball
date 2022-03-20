@@ -36,7 +36,7 @@
 				<p>
 					Wann: 27.05.2022 <br />
 					Wo:
-					<a href="https://goo.gl/maps/SiDaDed88hqd3F5E9" target="_blank"
+					<a class="link" href="https://goo.gl/maps/SiDaDed88hqd3F5E9" target="_blank"
 						>Volksbad Jena</a
 					><br />
 					Einlass: 19 Uhr
@@ -44,7 +44,7 @@
 				<p>
 					Für Fragen und Anregungen zum FMI Ball 2022 stehen wir Ihnen sehr
 					gerne zu Verfügung. Senden Sie uns einfach eine E-Mail an:
-					fmi-ball@uni-jena.de
+					<a class="link" href="mailto:fmi-ball@uni-jena.de">fmi-ball@uni-jena.de</a>
 				</p>
 			</div>
 		</div>
@@ -71,4 +71,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.link {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.7);
+	font-style: italic;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: rgb(100, 100, 100, 0.7);
+	}
+}
 </style>
