@@ -11,6 +11,7 @@
 			</div>
 
 			<div class="content">
+				<p></p>
 				<h3><b>Der Ball der Fakultät für Mathematik und Informatik</b></h3>
 				<p>
 					Dieses Jahr wird der FMI Ball von den Fachschaftsräten
