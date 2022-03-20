@@ -17,6 +17,7 @@
 					>
 						<div class="image-wrapper">
 							<a
+								class="image-link"
 								:href="sponsor.url"
 								:target="sponsor.tab ? '_blank' : ''"
 								draggable="false"
@@ -44,13 +45,15 @@
 					<article class="sponsor">
 						<div class="image-wrapper">
 							<transition mode="out-in" name="fade">
-								<img
-									class="image"
-									:src="'/assets/sponsors/' + egg.image"
-									draggable="false"
-									@click="showEgg"
-									:key="egg.image"
-								/>
+								<div class="image-link">
+									<img
+										class="image"
+										:src="'/assets/sponsors/' + egg.image"
+										draggable="false"
+										@click="showEgg"
+										:key="egg.image"
+									/>
+								</div>
 							</transition>
 						</div>
 						<div class="footer">
@@ -121,7 +124,7 @@ export default {
 		function showEgg() {
 			egg.name = egg.eggname;
 			egg.text = "Schöne Grüße vom Entwickler 😜";
-			egg.image = "egg.png"
+			egg.image = "egg.png";
 		}
 
 		return {
@@ -148,9 +151,9 @@ export default {
 				overflow: auto;
 
 				.sponsor {
-					max-width: 22rem;
-					min-width: 22rem;
-					height: 32rem;
+					max-width: 13rem;
+					min-width: 13rem;
+					height: 25rem;
 					background-color: $white;
 					margin: 0 1rem;
 					padding: 1.5rem;
@@ -158,21 +161,32 @@ export default {
 					.image-wrapper {
 						display: flex;
 
-						width: 22rem;
-						height: 16rem;
+						width: 11rem;
+						height: 11rem;
 						overflow: hidden;
+						padding: 1rem;
 						//background-color: #e6ebeb;
 						background-color: $white;
 
-						.image {
-							max-width: 100%;
-							max-height: 100%;
-							margin: auto;
+						.image-link {
+							position: relative;
+							width: 100%;
+							height: 100%;
 							text-align: center;
-							flex-grow: 0;
+							vertical-align: middle;
 
 							&:hover {
 								cursor: pointer;
+							}
+
+							.image {
+								position: absolute;
+								top: 50%;
+								left: 50%;
+								transform: translateX(-50%) translateY(-50%);
+								margin: auto;
+								max-width: 100%;
+								max-height: 100%;
 							}
 						}
 					}
@@ -182,7 +196,7 @@ export default {
 						height: 12rem;
 
 						text-align: center;
-						padding: 2rem;
+						padding: 0.5rem;
 						padding-bottom: 0;
 
 						color: $black-second;
