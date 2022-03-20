@@ -11,27 +11,40 @@
 			</div>
 
 			<div class="content">
-				<p>Physkier- und Chemikerball? Das können wir auch!</p>
+				<h3><b>Der Ball der Fakultät für Mathematik und Informatik</b></h3>
 				<p>
-					Der <b>FMI-Ball</b> geht in die erste Runde. Bla Bla, dies und
-					das... Lorem Impsum. Protokoll vom 08.02.2022: Siebte
-					Sitzung.<br />
-					Antonia fragt Helen, ob es Neuigkeiten von FiFi bezüglich
-					unterschreiben gibt. Sie können das nicht übernehmen. Micha
-					berichtet von den neuen Dingen. Es gibt eine Empore. Mit
-					Bestuhlung unten und Oben sind es ca 180+105 Tischplätze. Es soll
-					gefragt werden, ob vor der Bühne Einzelstuhlplätze gestellt
-					werden können. Judith spricht Versicherungen an. Die Chemiker
-					haben wohl keine Versicherungen (😲). Wir sind über den Stura
-					versichert, sollte etwas passieren (😎). Antonia spricht über die
-					aktuelle Situation. Momentan können nur 50 Personen an solchen
-					Veranstaltungen teilnehmen.<br />
-					Helen berichtet von Ihren Arbeiten. Antonia hat bereits an den
-					Szenen gearbeitet. Sophie soll etwas zur Zaubershow ergänzen. Das
-					Stück ist gerade zu 40-50% fertig geschrieben. Wir wollen Anfang
-					April mit den Proben beginne.
+					Dieses Jahr wird der FMI Ball von den Fachschaftsräten
+					Mathematik, Informatik sowie Bioinformatik geplant und
+					durchgeführt. Es ist der erste Ball seiner Art an der Fakultät
+					für Mathematik und Informatik und soll einen Grundstein für eine
+					schöne, traditionelle Fortführung legen.
 				</p>
-				<p>Haha das war lustig.</p>
+				<p>
+					Der FMI Ball soll einen klassischen Tanzabend mit den Vorzügen
+					künstlerischer Unterhaltung im Stile von Theater, Kabarett und
+					Tanz kombinieren und dadurch einen unvergesslichen Abend für
+					Studierende, Lehrende sowie Mitarbeitende der Fakultät bieten.
+				</p>
+				<p>
+					Am Abend selbst wird durch ein studentisch durchgeführtes
+					Bühnenprogramm und eine abschließende Tanzveranstaltung das
+					Rahmenprogramm bestimmt. Lassen Sie sich überraschen.
+				</p>
+				<p></p>
+				<h3><b>Das Wichtigste in Kürze:</b></h3>
+				<p>
+					Wann: 27.05.2022 <br />
+					Wo:
+					<a href="https://goo.gl/maps/SiDaDed88hqd3F5E9" target="_blank"
+						>Volksbad Jena</a
+					><br />
+					Einlass: 19 Uhr
+				</p>
+				<p>
+					Für Fragen und Anregungen zum FMI Ball 2022 stehen wir Ihnen sehr
+					gerne zu Verfügung. Senden Sie uns einfach eine E-Mail an:
+					fmi-ball@uni-jena.de
+				</p>
 			</div>
 		</div>
 	</div>
