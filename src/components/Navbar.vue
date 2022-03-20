@@ -30,8 +30,6 @@ export default {
 		solid: Boolean,
 	},
 	setup(props) {
-		console.log(window.innerWidth);
-
 		let tablet = window.innerWidth <= 780 && window.innerWidth > 540;
 		let mobile = window.innerWidth <= 540;
 

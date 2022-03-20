@@ -12,39 +12,52 @@
 
 			<div class="content">
 				<p></p>
-				<h3><b>Der Ball der Fakultät für Mathematik und Informatik</b></h3>
+				<h3>Der Ball der Fakultät für Mathematik und Informatik</h3>
 				<p>
-					Dieses Jahr wird der FMI Ball von den Fachschaftsräten
+					Dieses Jahr wird der FMI-Ball von den Fachschaftsräten
 					Mathematik, Informatik sowie Bioinformatik geplant und
-					durchgeführt. Es ist der erste Ball seiner Art an der Fakultät
-					für Mathematik und Informatik und soll einen Grundstein für eine
-					schöne, traditionelle Fortführung legen.
+					durchgeführt. Er steht unter dem Thema „Casino Binomial“. Er ist
+					der erste Ball seiner Art an der Fakultät für Mathematik und
+					Informatik und soll einen Grundstein für eine schöne,
+					traditionelle Fortführung legen.
 				</p>
 				<p>
-					Der FMI Ball soll einen klassischen Tanzabend mit den Vorzügen
+					Der FMI-Ball soll einen klassischen Tanzabend mit den Vorzügen
 					künstlerischer Unterhaltung im Stile von Theater, Kabarett und
 					Tanz kombinieren und dadurch einen unvergesslichen Abend für
 					Studierende, Lehrende sowie Mitarbeitende der Fakultät bieten.
 				</p>
 				<p>
-					Am Abend selbst wird durch ein studentisch durchgeführtes
-					Bühnenprogramm und eine abschließende Tanzveranstaltung das
-					Rahmenprogramm bestimmt. Lassen Sie sich überraschen.
+					Der Abend selbst wird durch ein studentisch durchgeführtes
+					Bühnenprogramm, das sich natürlich an unserem Thema orientiert
+					und eine abschließende Tanzveranstaltung gestaltet.<br />
+					Lassen Sie sich überraschen.
 				</p>
 				<p></p>
-				<h3><b>Das Wichtigste in Kürze:</b></h3>
+				<h3>Das Wichtigste in Kürze</h3>
 				<p>
 					Wann: 27.05.2022 <br />
 					Wo:
-					<a class="link" href="https://goo.gl/maps/SiDaDed88hqd3F5E9" target="_blank"
+					<a
+						class="link"
+						href="https://goo.gl/maps/SiDaDed88hqd3F5E9"
+						target="_blank"
 						>Volksbad Jena</a
 					><br />
 					Einlass: 19 Uhr
 				</p>
 				<p>
-					Für Fragen und Anregungen zum FMI Ball 2022 stehen wir Ihnen sehr
+					Für Fragen und Anregungen zum FMI-Ball 2022 stehen wir Ihnen sehr
 					gerne zu Verfügung. Senden Sie uns einfach eine E-Mail an:
-					<a class="link" href="mailto:fmi-ball@uni-jena.de">fmi-ball@uni-jena.de</a>
+					<a class="link" href="mailto:fmi-ball@uni-jena.de"
+						>fmi-ball@uni-jena.de</a
+					>
+				</p>
+				<p></p>
+				<h3>Hygienekonzept</h3>
+				<p>
+					Wir werden den FMI Ball nach den aktuell geltenden
+					Hygienebestimmungen ausrichten.
 				</p>
 			</div>
 		</div>
@@ -71,6 +84,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h3 {
+	font-weight: bold !important;
+}
+
 .link {
 	text-decoration: none;
 	color: rgba(0, 0, 0, 0.7);
