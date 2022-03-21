@@ -80,7 +80,6 @@ export default {
 				});
 			});
 
-			rs.get("/info.php", null)
 		});
 
 		function processKeyDownEvent(event) {
