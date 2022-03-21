@@ -1,3 +1,14 @@
+.link {
+	text-decoration: none;
+	color: $black-second;
+	font-style: italic;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: rgb(100, 100, 100, 0.7);
+	}
+}
+
 .base {
 	height: max-content;
 	min-height: 100vh;
@@ -25,6 +36,7 @@
 			font-size: 2rem;
 			padding: 3rem 0 4.5rem 0;
 			color: $white;
+			text-shadow: 2px 2px 4px black;
 
 			.subtitle {
 				font-size: 1.5rem;

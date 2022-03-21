@@ -1,23 +1,8 @@
 <template>
-	<div id="nav">
+	<div id="footer">
 		<ul class="menu" >
-			<li class="menu-item" v-show="route.name != 'Home'" >
-				<router-link :to="{ name: 'Home'} ">Home</router-link>
-			</li>
-			<li class="menu-item" v-show="route.name == 'Home'" >
-				<a href="#home">Home</a>
-			</li>
-			<li class="menu-item" v-show="route.name == 'Home'" >
-				<a href="#about">Infos</a>
-			</li>
-			<li class="menu-item" v-show="route.name == 'Home'" >
-				<a href="#tickets">Karten</a>
-			</li>
-			<li class="menu-item" v-if="false" v-show="route.name == 'Home'" >
-				<a href="#sponsor">Sponsoren</a>
-			</li>
-			<li class="menu-item" v-show="route.name == 'Home'" >
-				<router-link :to="{ name: 'Newsletter' }">Newsletter</router-link>
+			<li class="menu-item" >
+				<router-link :to="{ name: 'Impressum'} ">Impressum</router-link>
 			</li>
 		</ul>
 	</div>
@@ -73,12 +58,8 @@ $menuBorderColor: v-bind(menuBorderColor);
 $menuBackgroundColor: v-bind(menuBackgroundColor);
 $menuBackgroundShadow: v-bind(menuBackgroundShadow);
 
-#nav {
+#footer {
 	display: block;
-
-	position: sticky;
-	top: 0;
-	left: 0;
 
 	width: 100%;
 	padding: 1.5em 0 1.5em;

@@ -85,7 +85,7 @@ import { reactive } from "@vue/reactivity";
 export default {
 	setup() {
 		const sponsors = reactive({
-			google: {
+			/*google: {
 				image: "sponsor03.png",
 				name: "Google LLC",
 				url: "https://www.google.de",
@@ -105,7 +105,7 @@ export default {
 				url: "https://en.wikipedia.org/wiki/Anonymous_(hacker_group)",
 				tab: true,
 				text: "Ein anonymer Beitrag einer anonymen Gruppe in anonymer Höhe",
-			},
+			},*/
 		});
 
 		const egg = reactive({

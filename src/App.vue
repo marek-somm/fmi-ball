@@ -11,13 +11,15 @@
 			@input="accessSubmit"
 		/>
 	</div>
+
 	<div ref="wrapper" class="wrapper" v-if="access.access">
 		<Navbar :solid="data.navbarSolid" />
 		<Home v-show="route.name == 'Home'"/>
 		<About v-show="route.name == 'Home'"/>
 		<Tickets v-show="route.name == 'Home'"/>
-		<Sponsor v-show="route.name == 'Home'"/>
+		<Sponsor v-show="route.name == 'Home'" v-if="false" />
 		<router-view v-show="route.name != 'Home'"></router-view>
+		<Footer v-show="route.name == 'Home'"/>
 	</div>
 </template>
 
@@ -32,9 +34,10 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Tickets from "./views/Tickets.vue";
 import Sponsor from "./views/Sponsor.vue";
+import Footer from "./views/Footer.vue";
 
 export default {
-	components: { Navbar, Background, Home, About, Tickets, Sponsor },
+	components: { Navbar, Background, Home, About, Tickets, Sponsor, Footer },
 	setup() {
 		const access = reactive({
 			access: true,
@@ -172,7 +175,7 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	background: url("~@/assets/faculty_blur.jpg");
+	background: url("~@/assets/casino.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center, center center;

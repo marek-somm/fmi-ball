@@ -87,15 +87,4 @@ export default {
 h3 {
 	font-weight: bold !important;
 }
-
-.link {
-	text-decoration: none;
-	color: rgba(0, 0, 0, 0.7);
-	font-style: italic;
-	transition: color 0.2s ease;
-
-	&:hover {
-		color: rgb(100, 100, 100, 0.7);
-	}
-}
 </style>

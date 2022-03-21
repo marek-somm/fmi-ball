@@ -35,14 +35,17 @@
 				</p>
 			</div>
 		</div>
+		<Footer class="footer"/>
 	</div>
 </template>
 
 <script>
 import { reactive, ref } from "@vue/reactivity";
 import rs from "@/services/RequestService.js";
+import Footer from "@/views/Footer.vue";
 
 export default {
+	components: { Footer },
 	setup() {
 		const data = reactive({
 			email: "",
@@ -88,16 +91,20 @@ export default {
 
 <style lang="scss" scoped>
 #newsletter {
-	&::before {
-		height: 80%;
-	}
-	height: 100vh;
+	height: max-content;
+	min-height: 100vh;
 	padding: 0;
 	position: absolute;
 	top: 0;
 	left: 0;
 
+	.footer {
+		position: absolute;
+		bottom: 0;
+	}
+
 	.inner {
+		margin: 3rem 0;
 		.header {
 			padding: 3rem 0 1.5rem 0;
 		}
