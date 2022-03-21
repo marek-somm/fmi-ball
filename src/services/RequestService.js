@@ -1,46 +1,39 @@
 import axios from 'axios';
 
 const authClient = axios.create({
-	baseURL: 'http://h2965810.stratoserver.net', 
+	baseURL: 'https://www.fmi-ball.de',
 });
 
 function handleError(error, errorMsg = null) {
-	let status = 404
-	if(error.response) {
-		if (error.response.status === 422 || error.response.status === 401) {
-			return error.response;
-		} else {
-			status = error.response.status;
-		}
-	}
+	console.log(error.response)
 	return {
 		data: {
-			errors: {
-				value: status,
-			},
-			message: errorMsg ? errorMsg : 'Unhandled Error',
+			message: error.response.message ? error.response.message : 'Unhandled Error',
 		},
+		status: error.response.status ? error.response.status : 400,
+	};
+}
+
+function makePayload(params) {
+	return {
+		params: params
 	};
 }
 
 export default {
-	async csrf() {
-		return authClient
-			.get('/sanctum/csrf-cookie')
-			.catch((error) => handleError(error));
-	},
-
 	async get(url, payload, errorMsg = null) {
 		return authClient
-			.get('/' + url, payload)
+			.get('/api/' + url, makePayload(payload))
 			.catch((error) => handleError(error, errorMsg));
 	},
 
-	async post(url, payload, errorMsg = null) {
-		let token = await this.csrf();
-		if (token.error) return token;
+	async post(url, payload) {
 		return authClient
-			.post('/' + url, payload)
-			.catch((error) => handleError(error, errorMsg));
+			.post('/api/' + url, payload, {
+				headers: {
+					'content-type': 'application/json'
+				}
+			})
+			.catch((error) => error.response);
 	},
 };

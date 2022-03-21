@@ -33,8 +33,6 @@ import About from "./views/About.vue";
 import Tickets from "./views/Tickets.vue";
 import Sponsor from "./views/Sponsor.vue";
 
-import rs from '@/services/RequestService.js'
-
 export default {
 	components: { Navbar, Background, Home, About, Tickets, Sponsor },
 	setup() {
@@ -79,8 +77,6 @@ export default {
 						});
 				});
 			});
-
-			rs.get("info.php", null)
 		});
 
 		function processKeyDownEvent(event) {
