@@ -8,7 +8,7 @@
 					öffnet bald
 				</p>
 
-				<FancyButton link="" text="Jetzt reservieren" @click="" />
+				<FancyButton v-if="false" link="" text="Jetzt reservieren" @click="" />
 			</div>
 			<div class="content">
 				<p>
