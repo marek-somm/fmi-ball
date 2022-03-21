@@ -17,7 +17,7 @@
 			</div>
 			<div class="content">
 				<p>
-					Sie können ihre Karten Online reservieren. Diese müssen dann
+					Sie können Ihre Karten online reservieren. Diese müssen dann
 					jedoch später in anderen Verkaufsstellen wie z.B. ausgewählten
 					Mensen erworben werden.
 				</p>
