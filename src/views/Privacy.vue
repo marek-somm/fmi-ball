@@ -1,5 +1,5 @@
 <template>
-	<div id="privacy">
+	<div id="privacy" ref="wrapper">
 		<h1>Datenschutzerklärung</h1>
 		<p>
 			Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
@@ -154,9 +154,18 @@
 </template>
 
 <script>
+import { onMounted, ref } from '@vue/runtime-core';
+
 export default {
 	setup() {
-		return {};
+		const wrapper = ref(0);
+
+		onMounted(() => {
+			wrapper.value.scrollIntoView();
+		})
+		return {
+			wrapper
+		};
 	},
 };
 </script>

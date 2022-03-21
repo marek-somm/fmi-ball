@@ -1,5 +1,5 @@
 <template>
-	<div id="home" class="base">
+	<div id="home" class="base" ref="wrapper">
 		<div class="inner">
 			<div class="header">
 				<h1 class="title">FMI-Ball 2022</h1>
@@ -8,7 +8,13 @@
 					Tanzball der Fakultät für Mathematik und Informatik
 				</p>
 			</div>
-			<a href="#about" class="arrow animate__animated animate__bounce animate__slow animate__infinite">
+			<a
+				href="#about"
+				class="
+					arrow
+					animate__animated animate__bounce animate__slow animate__infinite
+				"
+			>
 				<i class="fa-solid fa-chevron-down fa-2x"></i>
 			</a>
 		</div>
@@ -16,9 +22,24 @@
 </template>
 
 <script>
+import { onMounted, ref, watchEffect } from "@vue/runtime-core";
+import { useRoute } from "vue-router";
+
 export default {
 	setup() {
-		return {};
+		const route = useRoute();
+		const wrapper = ref(0);
+
+		onMounted(() => {
+			watchEffect(() => {
+				route.name;
+				wrapper.value.scrollIntoView();
+			});
+		});
+
+		return {
+			wrapper,
+		};
 	},
 };
 </script>
@@ -50,8 +71,9 @@ export default {
 				box-shadow: 1px 1px 3px black;
 				position: relative;
 
-				&::before, &::after {
-					content: '';
+				&::before,
+				&::after {
+					content: "";
 					display: block;
 					position: absolute;
 					top: -0.5rem;

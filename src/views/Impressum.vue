@@ -1,5 +1,5 @@
 <template>
-	<div id="privacy">
+	<div id="privacy" ref="wrapper">
 		<h1>Impressum</h1>
 		<h2>Angaben gemäß § 5 TMG:</h2>
 		<p>
@@ -96,9 +96,18 @@
 </template>
 
 <script>
+import { onMounted, ref } from '@vue/runtime-core';
+
 export default {
 	setup() {
-		return {};
+		const wrapper = ref(0);
+
+		onMounted(() => {
+			wrapper.value.scrollIntoView();
+		})
+		return {
+			wrapper
+		};
 	},
 };
 </script>
