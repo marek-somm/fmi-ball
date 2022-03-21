@@ -124,6 +124,7 @@ $white: $tmp;
 			padding: 0rem 2rem;
 			margin: 0 0 0 1.75rem;
 			color: $black;
+			text-shadow: none;
 			font-weight: 700;
 			line-height: 1.6;
 			text-align: right;
