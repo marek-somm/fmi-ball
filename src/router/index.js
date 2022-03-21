@@ -10,21 +10,33 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
+    meta: {
+      title: "FMI-Ball 2022"
+    }
   },
   {
     path: '/newsletter',
     name: 'Newsletter',
-    component: Newsletter
+    component: Newsletter,
+    meta: {
+      title: "Newsletter - FMI-Ball"
+    }
   },
   {
     path: '/impressum',
     name: 'Impressum',
-    component: Impressum
+    component: Impressum,
+    meta: {
+      title: "Impressum - FMI-Ball"
+    }
   },
   {
     path: '/datenschutz',
     name: 'Privacy',
-    component: Privacy
+    component: Privacy,
+    meta: {
+      title: "Datenschutz - FMI-Ball"
+    }
   },
   {
     path: "/:catchAll(.*)",
@@ -43,5 +55,9 @@ const router = createRouter({
     }
   },
 });
+
+router.afterEach((to, from) => {
+  document.title = to.meta.title;
+})
 
 export default router;
