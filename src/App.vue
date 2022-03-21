@@ -80,7 +80,7 @@ export default {
 				});
 			});
 
-			console.log(rs.get("/test.php"))
+			rs.get("/info.php", null)
 		});
 
 		function processKeyDownEvent(event) {

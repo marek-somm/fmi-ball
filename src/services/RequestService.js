@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const authClient = axios.create({
-	baseURL: 'http://api.fmi-ball.de', 
+	baseURL: 'http://h2965810.stratoserver.net', 
 });
 
 function handleError(error, errorMsg = null) {
@@ -32,7 +32,7 @@ export default {
 
 	async get(url, payload, errorMsg = null) {
 		return authClient
-			.get('/api/' + url, payload)
+			.get('/' + url, payload)
 			.catch((error) => handleError(error, errorMsg));
 	},
 
@@ -40,7 +40,7 @@ export default {
 		let token = await this.csrf();
 		if (token.error) return token;
 		return authClient
-			.post('/api/' + url, payload)
+			.post('/' + url, payload)
 			.catch((error) => handleError(error, errorMsg));
 	},
 };
