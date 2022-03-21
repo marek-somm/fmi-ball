@@ -13,13 +13,13 @@
 	</div>
 
 	<div ref="wrapper" class="wrapper" v-if="access.access">
-		<Navbar :solid="data.navbarSolid" />
-		<Home v-show="route.name == 'Home'"/>
-		<About v-show="route.name == 'Home'"/>
-		<Tickets v-show="route.name == 'Home'"/>
+		<Navbar :solid="data.navbarSolid || route.name != 'Home'" />
+		<Home v-show="route.name == 'Home'" />
+		<About v-show="route.name == 'Home'" />
+		<Tickets v-show="route.name == 'Home'" />
 		<Sponsor v-show="route.name == 'Home'" v-if="false" />
 		<router-view v-show="route.name != 'Home'"></router-view>
-		<Footer v-show="route.name == 'Home'"/>
+		<Footer v-show="route.name == 'Home'" />
 	</div>
 </template>
 

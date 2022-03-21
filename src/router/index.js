@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Impressum from '../views/Impressum.vue';
-import Newsletter from '../views/Newsletter.vue'
+import Newsletter from '../views/Newsletter.vue';
+import Privacy from '../views/Privacy.vue';
 
 
 const routes = [
@@ -19,6 +20,11 @@ const routes = [
     path: '/impressum',
     name: 'Impressum',
     component: Impressum
+  },
+  {
+    path: '/datenschutz',
+    name: 'Privacy',
+    component: Privacy
   },
   {
     path: "/:catchAll(.*)",

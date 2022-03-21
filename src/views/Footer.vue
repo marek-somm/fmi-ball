@@ -4,6 +4,9 @@
 			<li class="menu-item" >
 				<router-link :to="{ name: 'Impressum'} ">Impressum</router-link>
 			</li>
+			<li class="menu-item">
+				<router-link :to="{ name: 'Privacy'} ">Datenschutz</router-link>
+			</li>
 		</ul>
 	</div>
 </template>
