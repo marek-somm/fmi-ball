@@ -13,6 +13,8 @@
 					@keyup.enter="submit"
 					:disabled="data.success"
 					ref="input"
+					type="email"
+					name="email"
 				/>
 				<button
 					@click="submit"
