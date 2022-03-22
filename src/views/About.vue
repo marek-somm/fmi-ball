@@ -26,6 +26,7 @@
 					künstlerischer Unterhaltung im Stile von Theater, Kabarett und
 					Tanz kombinieren und dadurch einen unvergesslichen Abend für
 					Studierende, Lehrende sowie Mitarbeitende der Fakultät bieten.
+					Natürlich sind auch Angehörige anderer Fakultäten willkommen.
 				</p>
 				<p>
 					Der Abend selbst wird durch ein studentisch durchgeführtes
