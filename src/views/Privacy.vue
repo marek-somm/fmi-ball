@@ -79,15 +79,20 @@
 		<p>
 			Für die Zustellung unseres Newsletters erheben wir personenbezogene
 			Daten, die über eine Eingabemaske an uns übermittelt werden. Für eine
-			wirksame Registrierung benötigen wir eine valide E-Mail-Adresse. Auf
-			Grundlage Ihrer ausdrücklich erteilten Einwilligung (Art. 6 Abs. 1 lit.
-			a DSGVO), übersenden wir Ihnen regelmäßig unseren Newsletter bzw.
-			vergleichbare Informationen per E-Mail an Ihre angegebene
-			E-Mail-Adresse. Die Einwilligung zur Speicherung Ihrer persönlichen
-			Daten und ihrer Nutzung für den Newsletterversand können Sie jederzeit
-			mit Wirkung für die Zukunft widerrufen. In jedem Newsletter findet sich
-			dazu ein entsprechender Link. Außerdem können Sie uns jederzeit Ihren
-			Widerruf über die am Ende dieser Datenschutzhinweise angegebene
+			wirksame Registrierung benötigen wir eine valide E-Mail-Adresse. Um zu
+			überprüfen, dass eine Anmeldung tatsächlich durch den Inhaber einer
+			E-Mail-Adresse erfolgt, setzen wir das „Double-Opt-in“-Verfahren ein.
+			Hierzu protokollieren wir die Anmeldung zum Newsletter, den Versand
+			einer Bestätigungsmail und den Eingang der hiermit angeforderten
+			Antwort. Weitere Daten werden nicht erhoben. Auf Grundlage Ihrer
+			ausdrücklich erteilten Einwilligung (Art. 6 Abs. 1 lit. a DSGVO),
+			übersenden wir Ihnen regelmäßig unseren Newsletter bzw. vergleichbare
+			Informationen per E-Mail an Ihre angegebene E-Mail-Adresse. Die
+			Einwilligung zur Speicherung Ihrer persönlichen Daten und ihrer Nutzung
+			für den Newsletterversand können Sie jederzeit mit Wirkung für die
+			Zukunft widerrufen. In jedem Newsletter findet sich dazu ein
+			entsprechender Link. Außerdem können Sie uns jederzeit Ihren Widerruf
+			über die am Ende dieser Datenschutzhinweise angegebene
 			Kontaktmöglichkeit mitteilen.
 		</p>
 		<p>
@@ -154,7 +159,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from '@vue/runtime-core';
+import { onMounted, ref } from "@vue/runtime-core";
 
 export default {
 	setup() {
@@ -162,9 +167,9 @@ export default {
 
 		onMounted(() => {
 			wrapper.value.scrollIntoView();
-		})
+		});
 		return {
-			wrapper
+			wrapper,
 		};
 	},
 };
