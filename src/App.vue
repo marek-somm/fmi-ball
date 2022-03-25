@@ -175,7 +175,7 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	background: url("~@/assets/casino.jpg");
+	background: url("~@/assets/casino.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center, center center;
