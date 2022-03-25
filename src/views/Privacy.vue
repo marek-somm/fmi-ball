@@ -1,34 +1,10 @@
 <template>
 	<div id="privacy" ref="wrapper">
 		<h1>Datenschutzerklärung</h1>
-		<p>
+		<Postal>
 			Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
-			EU-Datenschutzgrundverordnung (DSGVO), ist:
-		</p>
-		<table class="postal">
-			<tr>
-				<td colspan="2">Friedrich-Schiller-Universität Jena</td>
-			</tr>
-			<tr>
-				<td colspan="2">Fachschaftsrat für Informatik</td>
-			</tr>
-			<tr>
-				<td>Postanschrift:</td>
-				<td>Ernst-Abbe-Platz 2</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>07743 Jena</td>
-			</tr>
-			<tr>
-				<td>Telefon:</td>
-				<td>03641 9 46411</td>
-			</tr>
-			<tr>
-				<td>Email:</td>
-				<td>fsrinfo(at)uni-jena.de</td>
-			</tr>
-		</table>
+			EU-Datenschutzgrundverordnung (DSGVO), ist:</Postal
+		>
 
 		<h2>Ihre Betroffenenrechte</h2>
 		<p>
@@ -159,16 +135,44 @@
 </template>
 
 <script>
-import { onMounted, ref } from "@vue/runtime-core";
+import { onMounted, reactive, ref } from "@vue/runtime-core";
+import Postal from "@/components/Postal.vue";
 
 export default {
+	components: { Postal },
 	setup() {
 		const wrapper = ref(0);
+
+		const info_org = reactive({
+			verantwortlicher:
+				"der FSR Informatik der Studierendenschaft der Universität Jena",
+			name1: "Friedrich-Schiller-Universität Jena",
+			name2: "Fachschaftsrat für Informatik",
+			anschrift: {
+				straße: "Ernst-Abbe-Platz 2",
+				ort: "07743 Jena",
+			},
+			telefon: "03641 9 46411",
+			email: "fsrinfo@uni-jena.de",
+		});
+
+		const info = reactive({
+			verantwortlicher: "Marek Sommerfeld",
+			name1: "Marek Sommerfeld",
+			name2: "",
+			anschrift: {
+				straße: "Leipziger Str. 72",
+				ort: "07743 Jena",
+			},
+			telefon: "03641 9 46411",
+			email: "fmi-ball@uni-jena.de",
+		});
 
 		onMounted(() => {
 			wrapper.value.scrollIntoView();
 		});
 		return {
+			info,
 			wrapper,
 		};
 	},

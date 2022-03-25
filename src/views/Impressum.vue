@@ -2,35 +2,8 @@
 	<div id="privacy" ref="wrapper">
 		<h1>Impressum</h1>
 		<h2>Angaben gemäß § 5 TMG:</h2>
-		<p>
-			Verantwortlich für den Inhalt dieser Seite ist der Fachschaftsrat
-			Informatik der Studierendenschaft der Universität Jena:
-		</p>
-		<table class="postal">
-			<tr>
-				<td colspan="2">Friedrich-Schiller-Universität Jena</td>
-			</tr>
-			<tr>
-				<td colspan="2">Fachschaftsrat für Informatik</td>
-			</tr>
-			<tr>
-				<td>Postanschrift:</td>
-				<td>Ernst-Abbe-Platz 2</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>07743 Jena</td>
-			</tr>
-			<tr>
-				<td>Telefon:</td>
-				<td>03641 9 46411</td>
-			</tr>
-			<tr>
-				<td>Email:</td>
-				<td>fsrinfo(at)uni-jena.de</td>
-			</tr>
-		</table>
-		<p>
+		<Postal>Verantwortlich für den Inhalt dieser Seite ist:</Postal>
+		<p v-if="false">
 			Der Fachschaftsrat Informatik ist Organ der Studierendenschaft der
 			Universität Jena und wird vertreten durch den Vorstand des
 			Studierendenrates
@@ -91,22 +64,29 @@
 			wir derartige Inhalte umgehend entfernen.
 		</p>
 		<br />
-		<p>Quelle: <a class="link" href="https://www.e-recht24.de/" target="_blank">eRecht24</a></p>
+		<p>
+			Quelle:
+			<a class="link" href="https://www.e-recht24.de/" target="_blank"
+				>eRecht24</a
+			>
+		</p>
 	</div>
 </template>
 
 <script>
-import { onMounted, ref } from '@vue/runtime-core';
+import { onMounted, ref } from "@vue/runtime-core";
+import Postal from "@/components/Postal.vue";
 
 export default {
+	components: { Postal },
 	setup() {
 		const wrapper = ref(0);
 
 		onMounted(() => {
 			wrapper.value.scrollIntoView();
-		})
+		});
 		return {
-			wrapper
+			wrapper,
 		};
 	},
 };
