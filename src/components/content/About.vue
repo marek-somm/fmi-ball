@@ -67,7 +67,7 @@
 
 <script>
 import { useRouter } from "vue-router";
-import FancyButton from "../components/FancyButton.vue";
+import FancyButton from "../FancyButton.vue";
 export default {
 	components: { FancyButton },
 	setup() {

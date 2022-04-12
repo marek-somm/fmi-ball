@@ -31,12 +31,12 @@ import { onMounted, reactive, ref } from "@vue/runtime-core";
 import { useRoute, useRouter } from "vue-router";
 import { debounce } from "debounce";
 import Background from "./components/Background.vue";
-import Home from "./views/Home.vue";
-import About from "./views/About.vue";
-import Tickets from "./views/Tickets.vue";
-import Sponsor from "./views/Sponsor.vue";
-import Newsletter from "./views/Newsletter.vue";
-import Footer from "./views/Footer.vue";
+import Home from "./components/content/Home.vue";
+import About from "./components/content/About.vue";
+import Tickets from "./components/content/Tickets.vue";
+import Sponsor from "./components/content/Sponsor.vue";
+import Newsletter from "./components/content/Newsletter.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
 	components: {

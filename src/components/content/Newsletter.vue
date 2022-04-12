@@ -43,10 +43,8 @@
 <script>
 import { reactive, ref } from "@vue/reactivity";
 import rs from "@/services/RequestService.js";
-import Footer from "@/views/Footer.vue";
 
 export default {
-	components: { Footer },
 	setup() {
 		const data = reactive({
 			email: "",
