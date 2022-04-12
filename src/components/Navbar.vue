@@ -117,7 +117,7 @@ $menuBackgroundShadow: v-bind(menuBackgroundShadow);
 				margin-top: -3px;
 
 				height: 4px;
-				width: 1000%;
+				width: 10000%;
 
 				transition: border $menu-transition-time;
 				border-top: solid 1px $menuBorderColor;
