@@ -17,7 +17,7 @@
 				<a href="#sponsor">Sponsoren</a>
 			</li>
 			<li class="menu-item" v-show="route.name == 'Home'" >
-				<router-link :to="{ name: 'Newsletter' }">Newsletter</router-link>
+				<a href="#newsletter">Newsletter</a>
 			</li>
 		</ul>
 	</div>

@@ -15,14 +15,6 @@ const routes = [
     }
   },
   {
-    path: '/newsletter',
-    name: 'Newsletter',
-    component: Newsletter,
-    meta: {
-      title: "Newsletter - FMI-Ball"
-    }
-  },
-  {
     path: '/impressum',
     name: 'Impressum',
     component: Impressum,

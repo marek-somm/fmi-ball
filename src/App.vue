@@ -17,6 +17,7 @@
 		<Home v-show="route.name == 'Home'" />
 		<About v-show="route.name == 'Home'" />
 		<Tickets v-show="route.name == 'Home'" />
+		<Newsletter v-show="route.name == 'Home'" />
 		<Sponsor v-show="route.name == 'Home'" v-if="false" />
 		<router-view v-show="route.name != 'Home'"></router-view>
 		<Footer v-show="route.name == 'Home'" />
@@ -34,10 +35,20 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Tickets from "./views/Tickets.vue";
 import Sponsor from "./views/Sponsor.vue";
+import Newsletter from "./views/Newsletter.vue";
 import Footer from "./views/Footer.vue";
 
 export default {
-	components: { Navbar, Background, Home, About, Tickets, Sponsor, Footer },
+	components: {
+		Navbar,
+		Background,
+		Home,
+		About,
+		Tickets,
+		Sponsor,
+		Footer,
+		Newsletter,
+	},
 	setup() {
 		const access = reactive({
 			access: true,
@@ -181,9 +192,13 @@ body {
 	background-position: center center, center center;
 
 	h1,
-	h2,
-	h3 {
+	h2 {
 		font-weight: normal;
+		margin: 0;
+	}
+
+	h3 {
+		font-weight: bold;
 		margin: 0;
 	}
 

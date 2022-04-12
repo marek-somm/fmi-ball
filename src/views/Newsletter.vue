@@ -37,7 +37,6 @@
 				</p>
 			</div>
 		</div>
-		<Footer class="footer"/>
 	</div>
 </template>
 
@@ -93,20 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 #newsletter {
-	height: max-content;
-	min-height: 100vh;
-	padding: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	.footer {
-		position: absolute;
-		bottom: 0;
-	}
-
 	.inner {
-		margin: 3rem 0;
 		.header {
 			padding: 3rem 0 1.5rem 0;
 		}
@@ -163,20 +149,6 @@ export default {
 				}
 			}
 		}
-	}
-}
-h3 {
-	font-weight: bold !important;
-}
-
-.link {
-	text-decoration: none;
-	color: rgba(0, 0, 0, 0.7);
-	font-style: italic;
-	transition: color 0.2s ease;
-
-	&:hover {
-		color: rgb(100, 100, 100, 0.7);
 	}
 }
 </style>
