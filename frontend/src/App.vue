@@ -205,7 +205,7 @@ body {
 	.wrapper {
 		flex-grow: 1;
 		position: relative;
-		overflow-x: hidden;
+		overflow-x: auto;
 		height: 100vh;
 
 		box-sizing: border-box;

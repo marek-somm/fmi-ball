@@ -22,3 +22,8 @@ pnpm-debug.log*
 *.sln
 *.sw?
 package-lock.json
+storage/
+frontend/src/assets/casino.jpg
+frontend/src/assets/faculty.jpg
+frontend/src/assets/faculty_blur.jpg
+frontend/src/assets/pic01.jpg

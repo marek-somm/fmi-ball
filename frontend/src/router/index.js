@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../components/content/Home.vue';
 import Impressum from '../views/Impressum.vue';
 import Privacy from '../views/Privacy.vue';
+import Tickets from '../views/Tickets.vue';
 
 
 const routes = [
@@ -18,7 +19,7 @@ const routes = [
     name: 'Impressum',
     component: Impressum,
     meta: {
-      title: "Impressum - FMI-Ball"
+      title: "Impressum | FMI-Ball"
     }
   },
   {
@@ -26,7 +27,15 @@ const routes = [
     name: 'Privacy',
     component: Privacy,
     meta: {
-      title: "Datenschutz - FMI-Ball"
+      title: "Datenschutz | FMI-Ball"
+    }
+  },
+  {
+    path: '/karten',
+    name: 'Tickets',
+    component: Tickets,
+    meta: {
+      title: "Karten | FMI-Ball"
     }
   },
   {
