@@ -3,6 +3,7 @@
 	color: $black-second;
 	font-style: italic;
 	transition: color 0.2s ease;
+	white-space: nowrap;
 
 	&:hover {
 		color: rgb(100, 100, 100, 0.7);
