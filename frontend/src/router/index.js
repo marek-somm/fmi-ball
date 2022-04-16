@@ -31,6 +31,14 @@ const routes = [
     }
   },
   {
+    path: '/karten',
+    name: 'Tickets',
+    component: Tickets,
+    meta: {
+      title: "Karten | FMI-Ball"
+    }
+  },
+  {
     path: "/:catchAll(.*)",
     name: "NotFound",
     redirect: { name: 'Home' }

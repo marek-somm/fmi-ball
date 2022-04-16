@@ -1,11 +1,12 @@
 <template>
 	<div class="container">
-		<Seat v-for="(seat, index) in seats" @click="process(seat, index)" :class="{ selected: data.selected.has(index),free: seat == 0, occupied: seat == 1, disabled: seat == -1 }"></Seat>
+		<Seat v-for="index in seats[0]" class="occupied" />
+		<Seat v-for="index in (seats[1]-seats[0])" @click="process(index)" class="free" :class="{ selected: data.selected.has(index) }"></Seat>
 	</div>
 </template>
 
 <script>
-import { computed, reactive } from '@vue/runtime-core'
+import { reactive } from '@vue/runtime-core'
 import Seat from './Seat.vue'
 export default {
 	components: { Seat },
@@ -21,11 +22,10 @@ export default {
 			selected: props.modelValue
 		})
 		
-		function process(seat, index) {
+		function process(index) {
 			if(data.selected.has(index)) {
 				data.selected.delete(index)
-			} else if(seat == 0 ) {
-				print(index)
+			} else {
 				data.selected.add(index)
 			}
 		}
@@ -46,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 .container {
 	display: grid;
-	grid-template-columns: auto auto auto auto auto;
+	grid-template-rows: auto auto auto auto auto auto auto auto;
+	grid-auto-flow: column;
 }
 </style>
