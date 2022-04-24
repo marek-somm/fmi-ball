@@ -2,10 +2,10 @@
 	<div class="container">
 		<div class="corner t l"></div>
 		<div class="corner t r"></div>
-		<div class="table"></div>
+		<div class="table">{{ data.tableNumber }}</div>
 		<div class="corner b l"></div>
 		<div class="corner b r"></div>
-		<Seat v-for="(seat, index) in seats" @click="process(seat, index)" :class="{ selected: data.selected.has(index),free: seat == 0, occupied: seat == 1, disabled: seat == -1 }"></Seat>
+		<Seat v-for="(seat, index) in seats" v-bind:key="index" @click="process(seat, index)" :class="{ selected: data.selected.has(index),free: seat == 0, occupied: seat == 1, disabled: seat == -1 }"></Seat>
 	</div>
 </template>
 
@@ -24,11 +24,16 @@ export default {
 		price: {
 			default: -1,
 			type: Number
+		},
+		tableNumber: {
+			default: 1,
+			type: Number
 		}
 	},
 	setup (props) {
 		const data = reactive({
-			selected: props.modelValue
+			selected: props.modelValue,
+			tableNumber: props.tableNumber,
 		})
 		
 		function process(seat, index) {
