@@ -1,43 +1,61 @@
 <template>
 	<div id="karten">
 		<div id="map">
-			{{ data.selected.tables[0] }}
 			<div class="stage"><p>Bühne</p></div>
 			<div class="tables-side">
 				<Seat class="pillar" />
 				<empty />
 				<empty />
 				<Seat class="occupied pillar" />
-				<Table class="top" price="3" :seats="data.seats.tables[10]" v-model="data.selected.tables[10]" />
-				<Table class="top" price="3" :seats="data.seats.tables[11]" v-model="data.selected.tables[11]" />
+				<Table class="top" price="3" :seats="data.seats.tables[10]" :tableNumber="11" v-model="data.selected.tables[10]" />
+				<Table class="top" price="3" :seats="data.seats.tables[11]" :tableNumber="12" v-model="data.selected.tables[11]" />
 				<Seat class="occupied pillar" />
 
 				<Seat class="occupied pillar" />
-				<Table class="bottom" price="3" :seats="data.seats.tables[12]" v-model="data.selected.tables[12]" />
-				<Table class="bottom" price="3" :seats="data.seats.tables[13]" v-model="data.selected.tables[13]" />
+				<Table class="bottom" price="3" :seats="data.seats.tables[12]" :tableNumber="13" v-model="data.selected.tables[12]" />
+				<Table class="bottom" price="3" :seats="data.seats.tables[13]" :tableNumber="14" v-model="data.selected.tables[13]" />
 				<Seat class="occupied pillar" />
-				<Table class="bottom" price="3" :seats="data.seats.tables[14]" v-model="data.selected.tables[14]" />
+				<Table class="bottom" price="3" :seats="data.seats.tables[14]" :tableNumber="15" v-model="data.selected.tables[14]" />
 				<empty />
 				<Seat class="occupied pillar" />
 			</div>
 			<div class="tables">
-				<Table class="" price="3" :seats="data.seats.tables[0]" v-model="data.selected.tables[0]" />
-				<Table class="" price="3" :seats="data.seats.tables[1]" v-model="data.selected.tables[1]" />
-				<Table class="" price="3" :seats="data.seats.tables[2]" v-model="data.selected.tables[2]" />
+				<Table class="" price="3" :seats="data.seats.tables[0]" :tableNumber="1" v-model="data.selected.tables[0]" />
+				<Table class="" price="3" :seats="data.seats.tables[1]" :tableNumber="2" v-model="data.selected.tables[1]" />
+				<Table class="" price="3" :seats="data.seats.tables[2]" :tableNumber="3" v-model="data.selected.tables[2]" />
 
 				<empty />
-				<Table class="" price="3" :seats="data.seats.tables[3]" v-model="data.selected.tables[3]" />
-				<Table class="" price="3" :seats="data.seats.tables[4]" v-model="data.selected.tables[4]" />
+				<Table class="" price="3" :seats="data.seats.tables[3]" :tableNumber="4" v-model="data.selected.tables[3]" />
+				<Table class="" price="3" :seats="data.seats.tables[4]" :tableNumber="5" v-model="data.selected.tables[4]" />
 
 				<empty />
-				<Table class="" price="3" :seats="data.seats.tables[5]" v-model="data.selected.tables[5]" />
-				<Table class="" price="3" :seats="data.seats.tables[6]" v-model="data.selected.tables[6]" />
+				<Table class="" price="3" :seats="data.seats.tables[5]" :tableNumber="6" v-model="data.selected.tables[5]" />
+				<Table class="" price="3" :seats="data.seats.tables[6]" :tableNumber="7" v-model="data.selected.tables[6]" />
 				
-				<Table class="" price="3" :seats="data.seats.tables[7]" v-model="data.selected.tables[7]" />
-				<Table class="" price="3" :seats="data.seats.tables[8]" v-model="data.selected.tables[8]" />
-				<Table class="" price="3" :seats="data.seats.tables[9]" v-model="data.selected.tables[9]" />
+				<Table class="" price="3" :seats="data.seats.tables[7]" :tableNumber="8" v-model="data.selected.tables[7]" />
+				<Table class="" price="3" :seats="data.seats.tables[8]" :tableNumber="9" v-model="data.selected.tables[8]" />
+				<Table class="" price="3" :seats="data.seats.tables[9]" :tableNumber="10" v-model="data.selected.tables[9]" />
 			</div>
 			<Seats class="seats" :seats="data.seats.seat" v-model="data.selected.seats"/>
+		</div>
+		<div id="selection">
+			<h2>Ihre Auswahl:</h2>
+			<div v-for="(table) in data.selected.tables.filter(m => m.size > 0)" :key="table" class="tableSummary">
+				<p>Tisch {{ data.selected.tables.indexOf(table) + 1 }}:</p>
+				<ul>
+					<li v-for="(seatNumber) in table" v-bind:key="seatNumber">Sitzplatz {{ seatNumber + 1 }}</li>
+				</ul>
+			</div>
+			<div class="tableSummary" v-if="data.selected.seats.size > 0">
+			<p>Sitzplätze ohne Tisch:</p>
+				<ul>
+					<li v-for="(seatNumber) in data.selected.seats" v-bind:key="seatNumber">Sitzplatz {{ seatNumber + 1 }}</li>
+				</ul>
+			</div>
+
+			<button class="submit" :disabled="!data.selected.tables.some(m => m.size > 0) && !data.selected.seats.size > 0" @click="onClick">
+				Jetzt Reservieren
+			</button>
 		</div>
 	</div>
 </template>
@@ -88,41 +106,74 @@ export default {
 				seat: [0,40], // 0 von 40 Stuhlplätzen sind belegt
 			},
 			selected: {
-				tables: {
-					0: new Set([]),
-					1: new Set([]),
-					2: new Set([]), // für Reservierung ausgewählte Plätze mit Platz-id an Tisch mit Tisch-id = 2
-					3: new Set([]),
-					4: new Set([]),
-					5: new Set([]),
-					6: new Set([]),
-					7: new Set([]),
-					8: new Set([]),
-					9: new Set([]),
-					10: new Set([]),
-					11: new Set([]),
-					12: new Set([]),
-					13: new Set([]),
-					14: new Set([]),
-					15: new Set([]),
-					16: new Set([]),
-					17: new Set([]),
-					18: new Set([]),
-					19: new Set([]),
-					20: new Set([]),
-					21: new Set([]),
-					22: new Set([]),
-					23: new Set([]),
-					24: new Set([]),
-					25: new Set([]),
-					26: new Set([]),
-					27: new Set([]),
-					28: new Set([]),
-					29: new Set([]),
-				},
+				tables: [
+					new Set([]),
+					new Set([]),
+					new Set([]), // für Reservierung ausgewählte Plätze mit Platz-id an Tisch mit Tisch-id = 2
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+					new Set([]),
+				],
 				seats: new Set([])
 			},
 		});
+
+		async function submit() {
+			if (validateEmail()) {
+				let answer = await rs.post("newsletter.php", {
+					email: data.email,
+				});
+				if (answer.status == 200) {
+					data.success = true;
+					input.value.blur();
+					data.label = "Erfolgreich! Prüfen Sie Ihre Emails";
+				} else if (answer.status == 400) {
+					alert(answer.data.message);
+				}
+			} else {
+				alert("Es ist etwas schief gelaufen, bitte versuchen Sie es erneut.");
+			}
+		}
+
+		const onClick = async () => {
+			const result = {
+				tables: {},
+				seats: 0
+			}
+
+			for (let index = 0; index < data.selected.tables.length; index++) {
+				const selectedSeats = data.selected.tables[index];
+				if(selectedSeats.size > 0)
+					result.tables[index] = Array.from(selectedSeats);
+			}
+
+			result.seats = data.selected.seats.size;
+			submit();
+		}
 
 		const beispiel_anfrage_an_server = {
 			tables: {
@@ -134,6 +185,7 @@ export default {
 
 		return {
 			data,
+			onClick
 		};
 	},
 };
@@ -147,6 +199,7 @@ export default {
 	margin: auto;
 	margin-top: 10rem;
 	padding: 5rem;
+	padding-bottom: 0;
 
 	background: $white;
 	position: relative;
@@ -224,5 +277,25 @@ export default {
 		}
 	}
 
+}
+
+#selection {	
+	width: calc(15rem + (8 * 2rem + 5rem)*3);
+
+	margin: auto;
+	padding: 5rem;
+	padding-top: 1rem;
+
+	background: $white;
+
+	.tableSummary {
+		margin: auto;
+		width: fit-content;
+		text-align: start;
+	}
+
+	.submit {
+		margin-top: 1rem;
+	}
 }
 </style>
