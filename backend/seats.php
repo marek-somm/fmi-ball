@@ -52,7 +52,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 	if (isset($_POST["information"])) {
 		foreach($required_fields as $item) {
-			if (!isset($_POST["information"][$item]) || $_POST["information"][$item] == "") {
+			if (!isset($_POST["information"][$item]) || trim($_POST["information"][$item]) == "") {
 				response("$item field is required", 400);
 			}
 		}
@@ -120,9 +120,13 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
 		if(get_free_seats($db, $table_id) < $seats) {
 			response("Your requested reservation could not be processed - Please reload page!", 400);
 		}
+		if($table_id > 30 || $table_id < 0) {
+			response("Your tableID is out of bounds - Please try again!", 400);
+		}
 	}
 
 	$response_string = "";
+	$price = 0;
 	
 	foreach($_POST["reservation"] as $table_id => $seats) {
 		for($i = 0; $i < $seats; $i++) {
@@ -139,7 +143,14 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
 		} else {
 			$response_string .= "<li>Tisch $table_id: $seats" . ($seats == 1 ? " Platz" : " Plätze") . "</li>";
 		}
-		
+
+		if($table_id == 0) {
+			$price += 10 * $seats;
+		} else if(($table_id >= 16 && $table_id <=19) || ($table_id >= 25 && $table_id <= 28)) {
+			$price += 13 * $seats;
+		} else {
+			$price += 15 * $seats;
+		}
 	}
 
 	$title = "Hallo ";
@@ -160,6 +171,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET') {
 		<ul>
 			$response_string
 		</ul>
+		<p>Summe: $price €</p>
 		<p>
 			Sie können Ihre reservierten Karten zu den Verkaufsterminen abholen und bezahlen. Diese werden wir Ihnen rechtzeitig per E-Mail mitteilen.<br>
 		</p>

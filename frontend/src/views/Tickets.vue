@@ -29,34 +29,34 @@
 				<empty />
 				<empty />
 				<Seat class="occupied pillar" />
-				<Table class="top" :price="3" :occupied="data.seats.tables[11]" :layout="data.seats.layout[1]" :tableNumber="11" v-model="data.selected.tables[11]" />
-				<Table class="top" :price="3" :occupied="data.seats.tables[12]" :layout="data.seats.layout[1]" :tableNumber="12" v-model="data.selected.tables[12]" />
+				<Table class="top" :price="data.prices[11]" :occupied="data.seats.tables[11]" :layout="data.seats.layout[1]" :tableNumber="11" v-model="data.selected.tables[11]" />
+				<Table class="top" :price="data.prices[12]" :occupied="data.seats.tables[12]" :layout="data.seats.layout[1]" :tableNumber="12" v-model="data.selected.tables[12]" />
 				<Seat class="occupied pillar" />
 
 				<Seat class="occupied pillar" />
-				<Table class="bottom" :price="3" :occupied="data.seats.tables[13]" :layout="data.seats.layout[1]" :tableNumber="13" v-model="data.selected.tables[13]" />
-				<Table class="bottom" :price="3" :occupied="data.seats.tables[14]" :layout="data.seats.layout[1]" :tableNumber="14" v-model="data.selected.tables[14]" />
+				<Table class="bottom" :price="data.prices[13]" :occupied="data.seats.tables[13]" :layout="data.seats.layout[1]" :tableNumber="13" v-model="data.selected.tables[13]" />
+				<Table class="bottom" :price="data.prices[14]" :occupied="data.seats.tables[14]" :layout="data.seats.layout[1]" :tableNumber="14" v-model="data.selected.tables[14]" />
 				<Seat class="occupied pillar" />
-				<Table class="bottom" :price="3" :occupied="data.seats.tables[15]" :layout="data.seats.layout[1]" :tableNumber="15" v-model="data.selected.tables[15]" />
+				<Table class="bottom" :price="data.prices[15]" :occupied="data.seats.tables[15]" :layout="data.seats.layout[1]" :tableNumber="15" v-model="data.selected.tables[15]" />
 				<empty />
 				<Seat class="occupied pillar" />
 			</div>
 			<div class="tables">
-				<Table class="" :price="3" :occupied="data.seats.tables[1]" :layout="data.seats.layout[0]" :tableNumber="1" v-model="data.selected.tables[1]" />
-				<Table class="" :price="3" :occupied="data.seats.tables[2]" :layout="data.seats.layout[0]" :tableNumber="2" v-model="data.selected.tables[2]" />
-				<Table class="" :price="3" :occupied="data.seats.tables[3]" :layout="data.seats.layout[0]" :tableNumber="3" v-model="data.selected.tables[3]" />
+				<Table class="" :price="data.prices[1]" :occupied="data.seats.tables[1]" :layout="data.seats.layout[0]" :tableNumber="1" v-model="data.selected.tables[1]" />
+				<Table class="" :price="data.prices[2]" :occupied="data.seats.tables[2]" :layout="data.seats.layout[0]" :tableNumber="2" v-model="data.selected.tables[2]" />
+				<Table class="" :price="data.prices[3]" :occupied="data.seats.tables[3]" :layout="data.seats.layout[0]" :tableNumber="3" v-model="data.selected.tables[3]" />
 
 				<empty />
-				<Table class="" :price="3" :occupied="data.seats.tables[4]" :layout="data.seats.layout[0]" :tableNumber="4" v-model="data.selected.tables[4]" />
-				<Table class="" :price="3" :occupied="data.seats.tables[5]" :layout="data.seats.layout[0]" :tableNumber="5" v-model="data.selected.tables[5]" />
+				<Table class="" :price="data.prices[4]" :occupied="data.seats.tables[4]" :layout="data.seats.layout[0]" :tableNumber="4" v-model="data.selected.tables[4]" />
+				<Table class="" :price="data.prices[5]" :occupied="data.seats.tables[5]" :layout="data.seats.layout[0]" :tableNumber="5" v-model="data.selected.tables[5]" />
 
 				<empty />
-				<Table class="" :price="3" :occupied="data.seats.tables[6]" :layout="data.seats.layout[0]" :tableNumber="6" v-model="data.selected.tables[6]" />
-				<Table class="" :price="3" :occupied="data.seats.tables[7]" :layout="data.seats.layout[0]" :tableNumber="7" v-model="data.selected.tables[7]" />
+				<Table class="" :price="data.prices[6]" :occupied="data.seats.tables[6]" :layout="data.seats.layout[0]" :tableNumber="6" v-model="data.selected.tables[6]" />
+				<Table class="" :price="data.prices[7]" :occupied="data.seats.tables[7]" :layout="data.seats.layout[0]" :tableNumber="7" v-model="data.selected.tables[7]" />
 				
-				<Table class="" :price="3" :occupied="data.seats.tables[8]" :layout="data.seats.layout[0]" :tableNumber="8" v-model="data.selected.tables[8]" />
-				<Table class="" :price="3" :occupied="data.seats.tables[9]" :layout="data.seats.layout[0]" :tableNumber="9" v-model="data.selected.tables[9]" />
-				<Table class="" :price="3" :occupied="data.seats.tables[10]" :layout="data.seats.layout[0]" :tableNumber="10" v-model="data.selected.tables[10]" />
+				<Table class="" :price="data.prices[8]" :occupied="data.seats.tables[8]" :layout="data.seats.layout[0]" :tableNumber="8" v-model="data.selected.tables[8]" />
+				<Table class="" :price="data.prices[9]" :occupied="data.seats.tables[9]" :layout="data.seats.layout[0]" :tableNumber="9" v-model="data.selected.tables[9]" />
+				<Table class="" :price="data.prices[10]" :occupied="data.seats.tables[10]" :layout="data.seats.layout[0]" :tableNumber="10" v-model="data.selected.tables[10]" />
 			</div>
 			<Seats class="seats" :seats="data.seats.tables[0]" v-model="data.selected.tables[0]"/>
 		</div>
@@ -70,28 +70,28 @@
 			</div>
 			<div class="tables-side">
 				<Seat class="pillar" />
-				<Table class="top gallery" :price="2" :occupied="data.seats.tables[16]" :layout="data.seats.layout[2]" :tableNumber="16" v-model="data.selected.tables[16]" />
-				<Table class="top gallery" :price="2" :occupied="data.seats.tables[17]" :layout="data.seats.layout[2]" :tableNumber="17" v-model="data.selected.tables[17]" />
+				<Table class="top gallery" :price="data.prices[16]" :occupied="data.seats.tables[16]" :layout="data.seats.layout[2]" :tableNumber="16" v-model="data.selected.tables[16]" />
+				<Table class="top gallery" :price="data.prices[17]" :occupied="data.seats.tables[17]" :layout="data.seats.layout[2]" :tableNumber="17" v-model="data.selected.tables[17]" />
 				<Seat class="occupied pillar" />
-				<Table class="top gallery" :price="2" :occupied="data.seats.tables[18]" :layout="data.seats.layout[2]" :tableNumber="18" v-model="data.selected.tables[18]" />
-				<Table class="top gallery" :price="2" :occupied="data.seats.tables[19]" :layout="data.seats.layout[2]" :tableNumber="19" v-model="data.selected.tables[19]" />
+				<Table class="top gallery" :price="data.prices[18]" :occupied="data.seats.tables[18]" :layout="data.seats.layout[2]" :tableNumber="18" v-model="data.selected.tables[18]" />
+				<Table class="top gallery" :price="data.prices[19]" :occupied="data.seats.tables[19]" :layout="data.seats.layout[2]" :tableNumber="19" v-model="data.selected.tables[19]" />
 				<Seat class="occupied pillar" />
-				<Table class="top gallery" :price="3" :occupied="data.seats.tables[20]" :layout="data.seats.layout[2]" :tableNumber="20" v-model="data.selected.tables[20]" />
-				<Table class="top gallery" :price="3" :occupied="data.seats.tables[21]" :layout="data.seats.layout[2]" :tableNumber="21" v-model="data.selected.tables[21]" />
+				<Table class="top gallery" :price="data.prices[20]" :occupied="data.seats.tables[20]" :layout="data.seats.layout[2]" :tableNumber="20" v-model="data.selected.tables[20]" />
+				<Table class="top gallery" :price="data.prices[21]" :occupied="data.seats.tables[21]" :layout="data.seats.layout[2]" :tableNumber="21" v-model="data.selected.tables[21]" />
 				
 				<Seat class="pillar" />
-				<Table class="bottom gallery" :price="2" :occupied="data.seats.tables[25]" :layout="data.seats.layout[2]" :tableNumber="25" v-model="data.selected.tables[25]" />
-				<Table class="bottom gallery" :price="2" :occupied="data.seats.tables[26]" :layout="data.seats.layout[2]" :tableNumber="26" v-model="data.selected.tables[26]" />
+				<Table class="bottom gallery" :price="data.prices[25]" :occupied="data.seats.tables[25]" :layout="data.seats.layout[2]" :tableNumber="25" v-model="data.selected.tables[25]" />
+				<Table class="bottom gallery" :price="data.prices[26]" :occupied="data.seats.tables[26]" :layout="data.seats.layout[2]" :tableNumber="26" v-model="data.selected.tables[26]" />
 				<Seat class="occupied pillar" />
-				<Table class="bottom gallery" :price="2" :occupied="data.seats.tables[27]" :layout="data.seats.layout[2]" :tableNumber="27" v-model="data.selected.tables[27]" />
-				<Table class="bottom gallery" :price="2" :occupied="data.seats.tables[28]" :layout="data.seats.layout[2]" :tableNumber="28" v-model="data.selected.tables[28]" />
+				<Table class="bottom gallery" :price="data.prices[27]" :occupied="data.seats.tables[27]" :layout="data.seats.layout[2]" :tableNumber="27" v-model="data.selected.tables[27]" />
+				<Table class="bottom gallery" :price="data.prices[28]" :occupied="data.seats.tables[28]" :layout="data.seats.layout[2]" :tableNumber="28" v-model="data.selected.tables[28]" />
 				<Seat class="occupied pillar" />
-				<Table class="bottom gallery" :price="3" :occupied="data.seats.tables[29]" :layout="data.seats.layout[2]" :tableNumber="29" v-model="data.selected.tables[29]" />
-				<Table class="bottom gallery" :price="3" :occupied="data.seats.tables[30]" :layout="data.seats.layout[2]" :tableNumber="30" v-model="data.selected.tables[30]" />
+				<Table class="bottom gallery" :price="data.prices[29]" :occupied="data.seats.tables[29]" :layout="data.seats.layout[2]" :tableNumber="29" v-model="data.selected.tables[29]" />
+				<Table class="bottom gallery" :price="data.prices[30]" :occupied="data.seats.tables[30]" :layout="data.seats.layout[2]" :tableNumber="30" v-model="data.selected.tables[30]" />
 			</div>
 		</div>
 	</div>
-	<div id="footer">
+	<div id="bottom-bar">
 		<div id="information">
 			<h2>Persönliche Daten:</h2>
 			<select class="input" :class="{ empty: !data.info.salutation }" required placeholder="Anrede" name="salutation" v-model="data.info.salutation">
@@ -108,6 +108,7 @@
 				<p v-show="data.selected.tables[0].size > 0"><b>Stuhlplätze:</b> {{ data.selected.tables[0].size }} {{ data.selected.tables[0].size == 1 ? "Platz" : "Plätze" }}</p>
 				<p v-for="(table) in data.selected.tables.filter(m => m.size > 0 && data.selected.tables.indexOf(m) != 0)" :key="table"><b>Tisch {{ data.selected.tables.indexOf(table) }}:</b> {{ table.size }} {{ table.size == 1 ? "Platz" : "Plätze" }}</p>
 			</div>
+			<p>Summe: {{ calcPrice() }} €</p>
 			<button class="submit" :disabled="!isSomethingSelected() || isInfoEmpty()" @click="data.confirm = true">
 				Jetzt Reservieren
 			</button>
@@ -131,6 +132,7 @@
 						<p v-show="data.selected.tables[0].size > 0"><b>Stuhlplätze:</b> {{ data.selected.tables[0].size }} {{ data.selected.tables[0].size == 1 ? "Platz" : "Plätze" }}</p>
 						<p v-for="(table) in data.selected.tables.filter(m => m.size > 0 && data.selected.tables.indexOf(m) != 0)" :key="table"><b>Tisch {{ data.selected.tables.indexOf(table) }}:</b> {{ table.size }} {{ table.size == 1 ? "Platz" : "Plätze" }}</p>
 					</div>
+					<p>Summe: {{ calcPrice() }} €</p>
 					<div class="button-bar">
 						<button class="cancel" @click="data.confirm = false">Abbrechen</button>
 						<button class="submit" @click="onClick">Bestätigen</button>
@@ -139,6 +141,7 @@
 			</div>
 		</div>
 	</Teleport>
+	<Footer />
 </template>
 
 <script>
@@ -148,9 +151,10 @@ import Seats from '../components/tickets/Seats.vue';
 import Seat from '../components/tickets/Seat.vue';
 import rs from "@/services/RequestService.js";
 import { onMounted } from '@vue/runtime-core';
+import Footer from '../components/Footer.vue';
 
 export default {
-	components: { Table, Seats, Seat },
+	components: { Table, Seats, Seat, Footer },
 	setup() {
 		const data = reactive({
 			confirm: false,
@@ -176,6 +180,16 @@ export default {
 				],
 				tables: []
 			},
+			prices: [1,
+				3,3,3,
+				  3,3,
+				  3,3,
+				3,3,3,
+				3,3,3,3,3,
+				2,2,2,2,
+				  3,3,3,3,3,
+				2,2,2,2,
+				3,3],
 			selected: {
 				tables: [
 					new Set([]), // Tisch 0 = Sitzplatz Block
@@ -259,7 +273,7 @@ export default {
 		}
 
 		function isInfoEmpty() {
-			if(data.info.salutation != 0 && data.info.forename != "" && data.info.surname != "" && validate_email(data.info.email)) {
+			if(data.info.salutation != 0 && data.info.forename.trim() != "" && data.info.surname.trim() != "" && validate_email(data.info.email)) {
 				return false
 			}
 			return true
@@ -269,18 +283,58 @@ export default {
 			window.location.href = "/";
 		}
 
+		function calcPrice() {
+			let tables = data.selected.tables.filter(m => m.size > 0 && data.selected.tables.indexOf(m) != 0)
+			let sum = 0
+
+			tables.forEach((table) => {
+				let index = data.selected.tables.indexOf(table)
+				let seats = table.size
+				let price = data.prices[index]
+				let cost = 10
+				if(price == 2) {
+					cost = 13
+				} else if(price == 3) {
+					cost = 15
+				}
+				
+				sum += cost * seats
+			})
+
+			return sum
+		}
+
 		return {
 			data,
 			onClick,
 			isInfoEmpty,
 			isSomethingSelected,
 			closeConfirm,
+			calcPrice
 		};
 	},
 };
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+	flex-grow: 1;
+	position: relative;
+	overflow-x: auto;
+	height: 100vh;
+
+	box-sizing: border-box;
+
+	.component {
+		position: absolute;
+		top: 0;
+		padding: 5rem 0;
+		height: 100%;
+		width: 100%;
+
+		box-sizing: inherit;
+	}
+}
 #legend {
 	background-color: $white;
 	width: calc(15rem + (8 * 2rem + 5rem)*3);
@@ -442,11 +496,12 @@ export default {
 
 }
 
-#footer {
+#bottom-bar {
 	display: flex;
 	margin: auto;
 
 	width: max-content;
+	margin-bottom: 2rem;
 
 	#selection {	
 		width: max-content;
@@ -473,6 +528,14 @@ export default {
 			padding: 0.5rem 2rem;
 			outline: none;
 			transition: all 0.1s;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&:disabled {
+				cursor: default;
+			}
 		}
 
 		* {
@@ -584,6 +647,10 @@ export default {
 				transition: all 0.15s;
 
 				color: rgb(54, 54, 54);
+
+				&:hover {
+					cursor: pointer;
+				}
 			}
 		}
 
@@ -617,7 +684,8 @@ export default {
 					background-color: rgb(255, 160, 160);
 
 					&:hover {
-						background-color: rgb(255, 100, 100)
+						background-color: rgb(255, 100, 100);
+						cursor: pointer;
 					}
 				}
 
@@ -626,6 +694,7 @@ export default {
 
 					&:hover {
 						background-color: rgb(100, 253, 100);
+						cursor: pointer;
 					}
 				}
 			}
