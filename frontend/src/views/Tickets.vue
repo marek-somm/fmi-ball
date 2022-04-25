@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="tip-wrapper">
-				<p><b>Hinweis:</b> Die Position der Plätze ist beim kauf der Karten nicht relevant. Es werden lediglich die Art der Karte und die Tischnummer reserviert.</p>
+				<p><b>Hinweis:</b> Die Position der Plätze ist beim Kauf der Karten nicht relevant. Es werden lediglich die Art der Karte und die Tischnummer reserviert.</p>
 			</div>
 		</div>
 	</div>

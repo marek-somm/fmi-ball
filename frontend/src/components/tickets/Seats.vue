@@ -1,5 +1,6 @@
 <template>
 	<div class="container">
+		{{ seats }}
 		<Seat v-for="index in seats" v-bind:key="index" class="occupied" />
 		<Seat :price="1" v-for="index in (seatsMax-seats)" v-bind:key="index" @click="process(index)" class="free" :class="{ selected: data.selected.has(index) }"></Seat>
 	</div>
@@ -11,7 +12,7 @@ import Seat from './Seat.vue'
 export default {
 	components: { Seat },
 	props: {
-		seats: Array,
+		seats: Number,
 		seatsMax: {
 			default: 40,
 			type: Number
