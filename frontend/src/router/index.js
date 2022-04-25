@@ -31,7 +31,7 @@ const routes = [
     }
   },
   {
-    path: '/karten-beta-58c30f4g3',
+    path: '/karten-beta-as74i0f7faiush8',
     name: 'Tickets',
     component: Tickets,
     meta: {
