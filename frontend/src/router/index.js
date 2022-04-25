@@ -31,7 +31,7 @@ const routes = [
     }
   },
   {
-    path: '/karten',
+    path: '/karten-beta-58c30f4g3',
     name: 'Tickets',
     component: Tickets,
     meta: {
@@ -58,6 +58,7 @@ const router = createRouter({
 
 router.afterEach((to, from) => {
   document.title = to.meta.title;
+  window.scrollTo(0, 0)
 })
 
 export default router;

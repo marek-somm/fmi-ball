@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
-		<Seat v-for="index in seats[0]" v-bind:key="index" class="occupied" />
-		<Seat v-for="index in (seats[1]-seats[0])" v-bind:key="index" @click="process(index)" class="free" :class="{ selected: data.selected.has(index) }"></Seat>
+		<Seat v-for="index in seats" v-bind:key="index" class="occupied" />
+		<Seat :price="1" v-for="index in (seatsMax-seats)" v-bind:key="index" @click="process(index)" class="free" :class="{ selected: data.selected.has(index) }"></Seat>
 	</div>
 </template>
 
@@ -12,6 +12,10 @@ export default {
 	components: { Seat },
 	props: {
 		seats: Array,
+		seatsMax: {
+			default: 40,
+			type: Number
+		},
 		modelValue: {
 			default: new Set(),
 			type: Set

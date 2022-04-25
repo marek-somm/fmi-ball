@@ -64,7 +64,7 @@ export default {
 
 		async function submit() {
 			if (validateEmail()) {
-				let answer = await rs.post("newsletter.php", {
+				let answer = await rs.post("newsletter", {
 					email: data.email,
 				});
 				if (answer.status == 200) {

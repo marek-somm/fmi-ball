@@ -1,30 +1,9 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
-
-if (
-	isset($_SERVER['REQUEST_METHOD'])
-	&& $_SERVER['REQUEST_METHOD'] === 'OPTIONS'
-) {
-	// need preflight here
-	header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
-	// add cache control for preflight cache
-	// @link https://httptoolkit.tech/blog/cache-your-cors/
-	header('Access-Control-Max-Age: 86400');
-	header('Cache-Control: public, max-age=86400');
-	header('Vary: origin');
-	// just exit and CORS request will be okay
-	// NOTE: We are exiting only when the OPTIONS preflight request is made
-	// because the pre-flight only checks for response header and HTTP status code.
-	exit(0);
-}
-
-function response($msg, $code = 500) {
-	header("content-type:application/json");
-	http_response_code($code);
-	echo (json_encode(array("message" => $msg, "status" => $code)));
-	die();
-}
+include "cors.php";
+include "request.php";
+include "database.php";
+include "log.php";
 
 function mailto($email, $subject, $message) {
 	$from = "FMI-Ball <info@fmi-ball.de>";
@@ -35,29 +14,10 @@ function mailto($email, $subject, $message) {
 	mail($email, '=?UTF-8?B?' . base64_encode($subject) . '?=', $message, $headers);
 }
 
-class Database extends SQLite3 {
-	function __construct() {
-		$db_name = "/var/www/fmi-ball/storage/database/database.sqlite";
-
-		$this->open($db_name);
-	}
-
-	function fetchData($sql) {
-		$ret = $this->query($sql);
-		return $ret;
-	}
-
-	function fetchFirst($sql) {
-		return $this->fetchData($sql)->fetchArray(SQLITE3_ASSOC);
-	}
-}
-
 $db = new Database();
 if (!$db) {
 	response($db->lastErrorMsg(), 500);
 }
-
-include "log.php";
 
 $log = new Log();
 
