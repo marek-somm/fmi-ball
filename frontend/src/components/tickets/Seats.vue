@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<Seat v-for="index in seats" v-bind:key="index" class="occupied" />
-		<Seat :price="1" v-for="index in (seatsMax-seats)" v-bind:key="index" @click="process(index)" class="free" :class="{ selected: data.selected.has(index) }"></Seat>
+		<Seat :price="1" v-for="index in (seatsMax-seats >= 0 ? seatsMax-seats : 0)" v-bind:key="index" @click="process(index)" class="free" :class="{ selected: data.selected.has(index) }"></Seat>
 	</div>
 </template>
 
