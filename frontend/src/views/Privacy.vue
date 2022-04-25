@@ -51,6 +51,42 @@
 			Behörde.
 		</p>
 
+		<h2>Datenerhebung</h2>
+		<p>
+			Wenn Sie unsere Webseite lediglich als Mittel zur Information nutzen,
+			also keine Registrierung und auch keine anderweitige Übermittlung von
+			Informationen stattfindet, erheben wir nur die personenbezogenen Daten,
+			die Ihr Browser an unseren Server übermittelt. Dieser wird vom
+			Webserver automatisch im Logfile gespeichert und dient der
+			Fehleranalyse. Wenn Sie unsere Website betrachten möchten, erheben wir
+			daher folgenden Daten:
+		</p>
+		<ul>
+			<li>IP-Adresse</li>
+			<li>Datum und Uhrzeit des Abrufs</li>
+			<li>Browsertyp</li>
+			<li>Sprache und Browser-Version</li>
+			<li>URL des Abrufs</li>
+			<li>Zeitzone</li>
+			<li>Zugriffsstatus/HTTP-Statuscode</li>
+			<li>Datenmenge (in KB)</li>
+			<li>Websites, von denen die Anforderung kommt (Referer)</li>
+			<li>Betriebssystem</li>
+		</ul>
+		<p>
+			Eine Speicherung dieser Daten zusammen mit anderen personenbezogenen
+			Daten von Ihnen findet nicht statt.
+		</p>
+
+		<h2>Kartenreservierung</h2>
+		<p>
+			Sollte die Kartenreservierung in Anspruch genommen werden, so werden
+			Ihre Personenbezogenen Daten (Anrede, Vorname, Nachname, Email) zum
+			Zweck der vorläufigen Reservierung und dem anschließenden Erwerb der
+			Karten gespeichert. Eine Woche nach Veranstaltungsende werden Ihre
+			Daten wieder gelöscht.
+		</p>
+
 		<h2>Newsletter</h2>
 		<p>
 			Für die Zustellung unseres Newsletters erheben wir personenbezogene
