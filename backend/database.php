@@ -28,4 +28,16 @@ class Database extends SQLite3 {
 		}
 		return $data;
 	}
+
+	function fetchAll($sql) {
+		$data = $this->fetchData($sql);
+
+		$ret = array();
+
+		while ($row = $data->fetchArray()) {
+			$ret[] = $row;
+		}
+
+		return $ret;
+	}
 }
