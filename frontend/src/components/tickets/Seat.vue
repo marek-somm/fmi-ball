@@ -57,6 +57,10 @@ $color: v-bind(color);
 .occupied {
 	background: darkgray;
 
+	&:hover {
+		cursor: default;
+	}
+
 	&:focus {
 		outline: none;
 	}

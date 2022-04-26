@@ -16,7 +16,10 @@
 				</div>
 			</div>
 			<div class="tip-wrapper">
-				<p><b>Hinweis:</b> Die Position der Plätze ist beim Kauf der Karten nicht relevant. Es werden lediglich die Art der Karte und die Tischnummer reserviert.</p>
+				<p><b>Hinweis:</b>
+					Die Position der Plätze ist beim Kauf der Karten nicht relevant. Es werden lediglich die Art der Karte und die Tischnummer reserviert.<br>
+					Die Stuhlplätze werden nach dem Bühnenstück weggeräumt um Platz für die Tanzfläche zu machen.
+				</p>
 			</div>
 		</div>
 	</div>
@@ -363,7 +366,7 @@ export default {
 		}
 
 		.tip-wrapper {
-			width: 20rem;
+			width: 30rem;
 			text-align: justify;
 
 			p {

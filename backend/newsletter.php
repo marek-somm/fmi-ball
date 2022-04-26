@@ -27,14 +27,14 @@ if (isset($_GET["token"])) {
 	$sql = <<<EOF
 		SELECT email
 		FROM newsletter
-		WHERE token = '$token'
+		WHERE token = "$token"
 	EOF;
 
 	$email = $db->fetchFirst($sql)["email"];
 
 	$sql = <<<EOF
 		DELETE FROM newsletter
-		WHERE token = '$token'
+		WHERE token = "$token"
 	EOF;
 	$ret = $db->exec($sql);
 
@@ -54,7 +54,7 @@ if (isset($_GET["ref"])) {
 	$sql = <<<EOF
 		SELECT email
 		FROM validTokens
-		WHERE token='$ref'
+		WHERE token="$ref"
 	EOF;
 
 	$email = $db->fetchFirst($sql)["email"];

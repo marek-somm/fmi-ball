@@ -4,20 +4,20 @@
 			<div class="header">
 				<h2 class="title">Kartenverkauf und Abholung</h2>
 				<p class="subtitle">
-					Momentan sind noch keine Karten erhältlich<br />Die
-					Kartenreservierung öffnet bald
+					Die Kartenreservierung ist geöffnet<br />
+					Der Verkauf beginnt in Kürze
 				</p>
 
 				<FancyButton
-					v-if="false"
-					link=""
+					v-if="true"
+					link="Tickets"
 					text="Jetzt reservieren"
 					@click=""
 				/>
 			</div>
 			<div class="content">
 				<p>
-					Sie können Ihre Karten online reservieren. Diese müssen dann
+					Sie können Ihre Karten online reservieren. Diese müssen
 					jedoch später in anderen Verkaufsstellen wie z.B. ausgewählten
 					Mensen erworben werden.
 				</p>
