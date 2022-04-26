@@ -9,18 +9,19 @@
 		</div>
 		<div class="corner b l"></div>
 		<div class="corner b r"></div>
-		<Seat
-			v-for="(seat, index) in layout"
-			:key="index"
-			@click="process(index >= occupied, index)"
-			:price="price"
-			:class="{
-				selected: data.selected.has(index),
-				free: seat == 1 && index >= occupied,
-				occupied: index < occupied,
-				disabled: seat == 0,
-			}"
-		></Seat>
+		<template v-for="(seat, index) in layout" :key="index">
+			<Seat
+				@click="process(index >= occupied, index)"
+				:price="price"
+				:test="seat"
+				:class="{
+					selected: data.selected.has(index),
+					free: seat == 1 && isFree(index, occupied, layout),
+					occupied: !isFree(index, occupied, layout),
+					disabled: seat == 0
+				}"
+			></Seat>
+		</template>
 	</div>
 </template>
 
@@ -68,11 +69,19 @@ export default {
 			return props.layout.length / 2 - 1;
 		});
 
+		function isFree(index, occupied, layout) {
+			if(layout.slice(0,occupied + 1).includes(0)) {
+				return index >= occupied + 1
+			}
+			return index >= occupied
+		}
+
 		return {
 			data,
 			tableLength,
 			print,
 			process,
+			isFree
 		};
 	},
 };
