@@ -287,7 +287,7 @@ export default {
 		}
 
 		function calcPrice() {
-			let tables = data.selected.tables.filter(m => m.size > 0 && data.selected.tables.indexOf(m) != 0)
+			let tables = data.selected.tables.filter(m => m.size > 0)
 			let sum = 0
 
 			tables.forEach((table) => {
