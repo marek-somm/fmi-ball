@@ -4,7 +4,7 @@
 			<div class="header">
 				<h2 class="title">Safe the Date!</h2>
 				<p class="subtitle">
-					Der nächste Fmi-Ball findet am <u>16.06.2023</u> statt
+					Der nächste FMI-Ball findet am <u>16.06.2023</u> statt
 				</p>
 
 				<FancyButton href="#tickets" text="Karten kaufen" v-if="false" />

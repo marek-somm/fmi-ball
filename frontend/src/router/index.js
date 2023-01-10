@@ -11,7 +11,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: "FMI-Ball 2022"
+      title: "FMI-Ball 2023"
     }
   },
   {
@@ -19,7 +19,7 @@ const routes = [
     name: 'Impressum',
     component: Impressum,
     meta: {
-      title: "Impressum | FMI-Ball"
+      title: "FMI-Ball Impressum"
     }
   },
   {
@@ -27,7 +27,7 @@ const routes = [
     name: 'Privacy',
     component: Privacy,
     meta: {
-      title: "Datenschutz | FMI-Ball"
+      title: "FMI-Ball Datenschutz"
     }
   },
   {
