@@ -1,5 +1,5 @@
 <template>
-	<div id="footer">
+	<div id="footer" class="bg-blur">
 		<ul class="menu" >
 			<li class="menu-item" >
 				<router-link :to="{ name: 'Impressum'} ">Impressum</router-link>

@@ -16,8 +16,11 @@
 			<li class="menu-item" v-if="false" v-show="route.name == 'Home'" >
 				<a href="#sponsor">Sponsoren</a>
 			</li>
-			<li class="menu-item" v-show="route.name == 'Home'" >
+			<li class="menu-item" v-show="route.name == 'Home'" v-if="false" >
 				<a href="#newsletter">Newsletter</a>
+			</li>
+			<li class="menu-item" v-show="route.name == 'Home'" >
+				<a href="#support">Mitmachen</a>
 			</li>
 		</ul>
 	</div>

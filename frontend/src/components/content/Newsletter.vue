@@ -31,8 +31,9 @@
 				<h3>Sie wollen keine neuen Infos verpassen?</h3>
 				<p>
 					Dann abonnieren Sie jetzt unseren Newsletter. Sie werden alle
-					wichtigen Informationen den Ball betreffend als einer der Ersten erhalten. Unteranderem erfahren
-					Sie dann auch sofort von der Öffnung der Karten-Reservierungen.<br />
+					wichtigen Informationen den Ball betreffend als einer der Ersten
+					erhalten. Unteranderem erfahren Sie dann auch sofort von der
+					Öffnung der Karten-Reservierungen.<br />
 					Sie können sich natürlich jederzeit wieder abmelden.
 				</p>
 			</div>

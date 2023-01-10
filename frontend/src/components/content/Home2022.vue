@@ -2,20 +2,21 @@
 	<div id="home" class="base" ref="wrapper">
 		<div class="inner">
 			<div class="header">
-				<a href="#about" class="arrow">
-					<h1 class="title">Zu den Infos</h1>
-					<i
-						class="
-							arrow-icon
-							fa-solid fa-chevron-down fa-2x
-							animate__animated
-							animate__bounce
-							animate__slow
-							animate__infinite
-						"
-					></i>
-				</a>
+				<h1 class="title">FMI-Ball 2022</h1>
+				<hr />
+				<p class="subtitle">
+					Tanzball der Fakultät für Mathematik und Informatik
+				</p>
 			</div>
+			<a
+				href="#about"
+				class="
+					arrow
+					animate__animated animate__bounce animate__slow animate__infinite
+				"
+			>
+				<i class="fa-solid fa-chevron-down fa-2x"></i>
+			</a>
 		</div>
 	</div>
 </template>
@@ -53,23 +54,13 @@ export default {
 	.inner {
 		width: auto;
 		padding: 2rem;
-		padding-top: 50vh;
-
-		@media screen and (max-width: 780px) {
-			padding-top: 2rem;
-		}
 
 		.header {
 			padding: 0;
 
 			.title {
+				font-size: 4rem;
 				text-shadow: 1px 1px 6px black;
-				padding-right: 1.5rem;
-
-				font-size: 2rem;
-				@media screen and (min-width: 780px) {
-					font-size: 5vw;
-				}
 			}
 
 			hr {
@@ -110,20 +101,13 @@ export default {
 		}
 
 		.arrow {
-			display: flex;
+			display: inline-block;
 			padding: 1rem;
 			text-decoration: none;
 			color: $white;
 
 			&:hover {
 				cursor: pointer;
-			}
-
-			.fa-2x {
-				font-size: 2rem;
-				@media screen and (min-width: 780px) {
-					font-size: 5vw;
-				}
 			}
 		}
 	}

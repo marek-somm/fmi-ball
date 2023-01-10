@@ -1,25 +1,25 @@
 <template>
-	<div id="about" class="base bg-blur">
+	<div id="about" class="base">
 		<div class="inner">
 			<div class="header">
-				<h2 class="title">Safe the Date!</h2>
+				<h2 class="title">Der 1. FMI-Ball steht vor der Tür!</h2>
 				<p class="subtitle">
-					Der nächste Fmi-Ball findet am <u>16.06.2023</u> statt
+					Reserviere dir jetzt deine Karten für den <b>27.05.2022</b>
 				</p>
 
-				<FancyButton href="#tickets" text="Karten kaufen" v-if="false" />
+				<FancyButton href="#tickets" text="Karten kaufen" />
 			</div>
 
 			<div class="content">
 				<p></p>
 				<h3>Der Ball der Fakultät für Mathematik und Informatik</h3>
 				<p>
-					Der FMI-Ball wird von den Fachschaftsräten Mathematik, Informatik
-					sowie Bioinformatik geplant und durchgeführt. Dieses Jahr steht
-					er unter dem Thema <b><i>Ball to the future</i></b
-					>. Nach dem Erfolgsschlager <i>Casino Binomial</i> im letzten
-					Jahr ist er nun schon der zweite Ball seiner Art und baut so den
-					Weg zur Tradition weiter aus.
+					Dieses Jahr wird der FMI-Ball von den Fachschaftsräten
+					Mathematik, Informatik sowie Bioinformatik geplant und
+					durchgeführt. Er steht unter dem Thema „Casino Binomial“. Er ist
+					der erste Ball seiner Art an der Fakultät für Mathematik und
+					Informatik und soll einen Grundstein für eine schöne,
+					traditionelle Fortführung legen.
 				</p>
 				<p>
 					Der FMI-Ball soll einen klassischen Tanzabend mit den Vorzügen
@@ -37,7 +37,7 @@
 				<p></p>
 				<h3>Das Wichtigste in Kürze</h3>
 				<p>
-					Wann: 16.06.2023 <br />
+					Wann: 27.05.2022 <br />
 					Wo:
 					<a
 						class="link"
@@ -45,10 +45,10 @@
 						target="_blank"
 						>Volksbad Jena</a
 					><br />
-					Einlass: wahrscheinlich 19 Uhr
+					Einlass: 19 Uhr
 				</p>
 				<p>
-					Für Fragen und Anregungen zum FMI-Ball 2023 stehen wir Ihnen sehr
+					Für Fragen und Anregungen zum FMI-Ball 2022 stehen wir Ihnen sehr
 					gerne zu Verfügung. Senden Sie uns einfach eine E-Mail an:
 					<a class="link" href="mailto:fmi-ball@uni-jena.de"
 						>fmi-ball@uni-jena.de</a

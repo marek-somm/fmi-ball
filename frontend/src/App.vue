@@ -12,15 +12,21 @@
 		/>
 	</div>
 
+	<div class="background">
+		<div class="first-layer"></div>
+		<div class="second-layer"></div>
+	</div>
 	<div ref="wrapper" class="wrapper" v-if="access.access">
 		<Navbar :solid="data.navbarSolid || route.name != 'Home'" />
 		<Home v-show="route.name == 'Home'" />
 		<About v-show="route.name == 'Home'" />
 		<Tickets v-show="route.name == 'Home'" />
-		<Newsletter v-show="route.name == 'Home'" />
+		<Newsletter v-show="route.name == 'Home'" v-if="false"/>
 		<Sponsor v-show="route.name == 'Home'" v-if="false" />
+		<Support v-show="route.name == 'Home'" />
 		<router-view v-show="route.name != 'Home'"></router-view>
 		<Footer v-show="route.name == 'Home'" />
+
 	</div>
 </template>
 
@@ -36,6 +42,7 @@ import About from "./components/content/About.vue";
 import Tickets from "./components/content/Tickets.vue";
 import Sponsor from "./components/content/Sponsor.vue";
 import Newsletter from "./components/content/Newsletter.vue";
+import Support from "./components/content/Support.vue"
 import Footer from "./components/Footer.vue";
 
 export default {
@@ -48,6 +55,7 @@ export default {
 		Sponsor,
 		Footer,
 		Newsletter,
+		Support,
 	},
 	setup() {
 		const access = reactive({
@@ -186,10 +194,32 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	background: url("~@/assets/casino.jpeg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center, center center;
+	.background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+
+		* {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+
+		.first-layer {
+			background: url("~@/assets/background_2023.jpeg") center center no-repeat;
+		}
+
+		.second-layer {
+			background: url("~@/assets/logo_2023.png") center/40% no-repeat;
+			transform: translateY(-10%);
+
+			@media screen and (max-width: 780px) {
+				background-size: 70%;
+			}
+
+			filter: drop-shadow(3px 3px 0.6rem #ed7627);
+		}
+	}
 
 	h1,
 	h2 {
