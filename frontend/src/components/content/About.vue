@@ -2,7 +2,7 @@
 	<div id="about" class="base bg-blur">
 		<div class="inner">
 			<div class="header">
-				<h2 class="title">Safe the Date!</h2>
+				<h2 class="title">Save the Date!</h2>
 				<p class="subtitle">
 					Der nächste FMI-Ball findet am <u>16.06.2023</u> statt
 				</p>
@@ -44,8 +44,7 @@
 						href="https://goo.gl/maps/SiDaDed88hqd3F5E9"
 						target="_blank"
 						>Volksbad Jena</a
-					><br />
-					Einlass: wahrscheinlich 19 Uhr
+					>
 				</p>
 				<p>
 					Für Fragen und Anregungen zum FMI-Ball 2023 stehen wir Ihnen sehr
@@ -57,7 +56,7 @@
 				<p></p>
 				<h3>Hygienekonzept</h3>
 				<p>
-					Wir werden den FMI Ball nach den aktuell geltenden
+					Wir werden den FMI-Ball nach den aktuell geltenden
 					Hygienebestimmungen ausrichten.
 				</p>
 			</div>

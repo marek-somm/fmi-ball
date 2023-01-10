@@ -37,9 +37,9 @@
 					Ganz egal was deine Motivation sein mag, wir suchen noch
 					engagierte und motivierte Schauspiel-Begeisterte. Du brauchst
 					keinerlei Erfahrungen mitzubringen, wir sind alle nur Amateure!
-					Das einzige was du mitbringen solltest ist Spaß und Motivaition,
+					Das einzige, was du mitbringen solltest ist Spaß und Motivation,
 					denn gerade in den Wochen vor dem Ball steht uns eine Zeit mit
-					vielen Proben befor.
+					vielen Proben bevor.
 				</p>
 				<p>
 					Wende dich gerne per Mail (<a
