@@ -205,12 +205,6 @@ export default {
 
 <style lang="scss" scoped>
 #privacy {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: max-content;
-	min-height: calc(100vh - 8rem);
-
 	padding-top: 4rem;
 
 	text-align: left;

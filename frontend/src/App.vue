@@ -1,4 +1,5 @@
 <template>
+	<div id="top"></div>
 	<div class="access" v-if="!access.access">
 		<p>
 			Sorry! This page is still under development. <br />
@@ -25,7 +26,7 @@
 		<Sponsor v-show="route.name == 'Home'" v-if="false" />
 		<Support v-show="route.name == 'Home'" />
 		<router-view v-show="route.name != 'Home'"></router-view>
-		<Footer v-show="route.name == 'Home'" />
+		<Footer />
 
 	</div>
 </template>
