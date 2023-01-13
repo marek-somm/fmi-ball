@@ -15,9 +15,24 @@
 	box-shadow: 0px -3px 4px rgba(20,20,20,0.3);
 }
 
+.title {
+	@media screen and (max-width: 480px) {
+		font-size: 10vw;
+	}
+}
+
+.subtitle {
+	@media screen and (max-width: 480px) {
+		font-size: 5.5vw;
+	}
+
+	font-size: 1.5rem;
+	font-weight: 300;
+	margin: 1.5rem 2rem;
+}
+
 .base {
 	height: max-content;
-	min-height: 100vh;
 	padding-top: 2rem;
 
 	@media screen and (max-width: 780px) {
@@ -45,10 +60,7 @@
 			text-shadow: 2px 2px 4px black;
 
 			.subtitle {
-				font-size: 1.5rem;
 				color: $white-second;
-				font-weight: 300;
-				margin: 1.5rem 2rem;
 			}
 		}
 
@@ -57,6 +69,7 @@
 			background: $white-second;
 			padding: 1rem 5rem 3rem 5rem;
 			text-align: left;
+			min-height: 10rem;
 
 			@media screen and (max-width: 780px) {
 				padding: 1rem 3rem 3rem 3rem;

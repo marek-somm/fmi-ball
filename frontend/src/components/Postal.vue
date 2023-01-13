@@ -1,6 +1,7 @@
 <template>
 	<p><slot></slot></p>
-	<table class="postal">
+	<p>
+		<table class="postal">
 		<tr v-if="info.name1">
 			<td colspan="2">{{ info.name1 }}</td>
 		</tr>
@@ -28,10 +29,11 @@
 			</td>
 		</tr>
 	</table>
+	</p>
 </template>
 
 <script>
-import { reactive } from '@vue/reactivity';
+import { reactive } from "@vue/reactivity";
 
 export default {
 	setup() {
@@ -49,8 +51,7 @@ export default {
 		});
 
 		const info = reactive({
-			verantwortlicher:
-				"Marek Sommerfeld",
+			verantwortlicher: "Marek Sommerfeld",
 			name1: "Marek Sommerfeld",
 			name2: "",
 			anschrift: {
@@ -60,9 +61,9 @@ export default {
 			telefon: "03641 9 46411",
 			email: "fmi-ball@uni-jena.de",
 		});
-		
+
 		return {
-			info
+			info,
 		};
 	},
 };
@@ -70,9 +71,9 @@ export default {
 
 <style lang="scss" scoped>
 p,
-	td,
-	li {
-		font-size: 1.15rem;
-		line-height: 1.7rem;
-	}
+td,
+li {
+	font-size: 1.15rem;
+	line-height: 1.7rem;
+}
 </style>

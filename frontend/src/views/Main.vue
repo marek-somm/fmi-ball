@@ -5,7 +5,7 @@
 	<Sponsor />
 </template>
 
-<script>
+<script lang="js">
 import Home from "../components/content/Home.vue";
 import About from "../components/content/About.vue";
 import Tickets from "../components/content/Tickets.vue";
@@ -20,4 +20,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>

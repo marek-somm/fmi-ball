@@ -21,7 +21,6 @@
 				<p>
 					Vorher wird es allerdings wieder die Möglichkeit zur Reservierung geben.
 				</p>
-				<div class="space"></div>
 			</div>
 		</div>
 	</div>
@@ -40,9 +39,5 @@ export default {
 <style lang="scss" scoped>
 .list {
 	list-style: none;
-}
-
-.space {
-	height: 20rem;
 }
 </style>
