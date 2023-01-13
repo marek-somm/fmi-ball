@@ -30,8 +30,9 @@
 				</p>
 				<p>
 					Der Abend selbst wird durch ein studentisch durchgeführtes
-					Bühnenprogramm, das sich natürlich an unserem Thema orientiert
-					und eine abschließende Tanzveranstaltung gestaltet.<br />
+					Bühnenprogramm, das sich natürlich an unserem Thema „Ball To The
+					Future“ orientiert, begonnen und geht in eine Tanzveranstaltung
+					über.<br />
 					Lassen Sie sich überraschen.
 				</p>
 				<p></p>
