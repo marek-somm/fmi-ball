@@ -2,7 +2,7 @@
 
 ## Project setup
 
-Clon repository
+Clone repository
 ```
 git clone https://github.com/darafsa/fmi-ball.git
 ```
